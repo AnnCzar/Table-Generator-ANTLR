@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.ToggleGroup?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane id="pane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="1002.0" prefWidth="834.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="frontend.MainController">
+   <children>
+      <Text id="title" fx:id="title" layoutX="277.0" layoutY="56.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Generator tabeli" textAlignment="CENTER">
+         <font>
+            <Font name="Calibri" size="36.0" />
+         </font>
+      </Text>
+      <Text id="tableFormInfo" fx:id="tableFormInfo" layoutX="239.0" layoutY="97.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Wprowadź tabelę  w odpowiednim formacie ">
+         <font>
+            <Font name="Calibri" size="18.0" />
+         </font>
+      </Text>
+      <ComboBox id="tableInputChoice" fx:id="tableInputChoice" layoutX="293.0" layoutY="142.0" prefHeight="27.0" prefWidth="230.0" promptText="sposób wprowadzenia tabeli" onAction="#chooseTableFormat" />
+      <TextArea id="tableInput" fx:id="tableInput" disable="true" layoutX="202.0" layoutY="179.0" prefHeight="216.0" prefWidth="411.0" />
+      <Button id="searchButton" fx:id="searchButton" layoutX="578.0" layoutY="138.0" mnemonicParsing="false" visible="false" onAction ="#chooseFile" />
+      <Button id="helpButton" fx:id="helpButton" layoutX="581.0" layoutY="78.0" mnemonicParsing="false" onAction="#showPopup" />
+
+      <Button id="generateButton" fx:id="generateButton" layoutX="350.0" layoutY="509.0" mnemonicParsing="false" text="Wygeneruj tabelę" onAction="#generateTable" />
+      <RadioButton id="latexRadio" fx:id="latexRadio" layoutX="236.0" layoutY="456.0" mnemonicParsing="false" text="LaTeX">
+         <toggleGroup>
+            <ToggleGroup fx:id="tableFormat" />
+         </toggleGroup>
+      </RadioButton>
+      <RadioButton id="htmlRadio" fx:id="htmlRadio" layoutX="376.0" layoutY="456.0" mnemonicParsing="false" text="html" toggleGroup="$tableFormat" />
+      <RadioButton id="htmlFlexRadio" fx:id="htmlFlexRadio" layoutX="490.0" layoutY="456.0" mnemonicParsing="false" text="html flex" toggleGroup="$tableFormat" />
+      <Text layoutX="289.0" layoutY="444.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Wybierz wyjściowy format tabeli">
+         <font>
+            <Font name="Calibri" size="18.0" />
+         </font>
+      </Text>
+      <TextArea id="generatedTable" fx:id="generatedTable" layoutX="196.0" layoutY="564.0" prefHeight="285.0" prefWidth="425.0" visible="false" />
+      <Button id="peepButton" fx:id="peepButton" layoutX="358.0" layoutY="875.0" mnemonicParsing="false" text="Podgląd tabeli" visible="false" />
+   </children>
+</AnchorPane>

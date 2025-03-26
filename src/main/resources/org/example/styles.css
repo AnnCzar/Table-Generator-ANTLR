@@ -1,0 +1,22 @@
+#helpButton, #searchButton {
+    /*-fx-background-color: white;*/
+    -fx-border-color: black;
+    -fx-padding: 3em;
+    -fx-scale-x: 1.0;
+    -fx-scale-y: 1.0;
+
+    -fx-pref-width: 3em;
+    -fx-pref-height: 3em;
+    -fx-min-width: 2em;
+    -fx-min-height: 2em;
+}
+.label {
+    -fx-background-color: lightyellow;
+    -fx-padding: 10px;
+    -fx-border-color: black;
+}
+
+
+.root {
+    -fx-background-color: #e6ecff;
+}
