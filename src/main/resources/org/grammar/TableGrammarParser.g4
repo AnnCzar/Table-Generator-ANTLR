@@ -5,31 +5,56 @@ program
     : table EOF
     ;
 
-table
-    : TABLE ID LCURLY inside RCURLY
+table  // dodanie ew podpisów - do przemyślenia
+    : TABLE ID caption? LCURLY inside RCURLY
+    ;
+caption
+    : CAPTION COLON TEXT
     ;
 
 inside
-    : column head layout row+
+    : column head layout borderStyle? row+
     ;
 
 column
     : COLUMNS COLON INT
     ;
 
+//head
+//    : HEADER COLON LCURLY TEXT (DIVIDER TEXT)* RCURLY
+//    ;
 head
-    : HEADER COLON LCURLY TEXT (DIVIDER TEXT)* RCURLY
+    : HEADER COLON LCURLY headerCell (DIVIDER headerCell)* RCURLY
+    ;
+
+headerCell  // mozna zdef. ew. wyrówananie czy łączenie komórek
+    : formattedText (ALIGN COLON alignStyle)?
+    ;
+
+alignStyle
+    : (LEFT | RIGHT | CENTER)?
     ;
 
 layout
-    : LAYOUT COLON LCURLY TEXT (DIVIDER TEXT)* RCURLY
+    : LAYOUT COLON LCURLY cellLayout (DIVIDER cellLayout)* RCURLY
     ;
 
+cellLayout
+    : (ALIGN COLON alignStyle)?
+    ;
+
+borderStyle  // styl obramowanie - opcjonalne
+    : BORDER COLON (FRAME | GRID | NONE)
+    ;
 row
     : ROW COLON LCURLY content (DIVIDER content)* RCURLY
     ;
 
 content
-    : TEXT
+    : formattedText
     | table
+    ;
+
+formattedText // opcjonalne formatowanie tkestu
+    : (ITALIC | BOLD)? TEXT
     ;

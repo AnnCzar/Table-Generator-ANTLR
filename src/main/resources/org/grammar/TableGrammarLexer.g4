@@ -20,6 +20,24 @@ HEADER : 'header' ;
 LAYOUT : 'layout' ;
 ROW : 'row' ;
 
+CAPTION: 'caption';
+BORDER: 'border';
+ALIGN: 'align';
+
+LEFT: 'left'; // to do położenia tekstu w tab
+RIGHT: 'right';
+CENTER  : 'center' ;
+
+
+ITALIC : 'italic' ;
+BOLD : 'bold' ;
+
+FRAME   : 'frame' ;
+GRID    : 'grid' ;
+// ROWS    : 'rows' ;
+// COLS    : 'cols' ;
+NONE    : 'none' ;
+
 INT : [0-9]+ ;
 WS: [ \t\n\r\f]+ -> skip ;
 TEXT: '"' ~[{}|)]+ '"' ;
