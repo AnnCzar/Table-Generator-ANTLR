@@ -1,4 +1,3 @@
-// DELETE THIS CONTENT IF YOU PUT COMBINED GRAMMAR IN Parser TAB
 lexer grammar TableGrammarLexer;
 
 AND : 'and' ;
@@ -18,13 +17,13 @@ TABLE : 'table' ;
 COLUMNS : 'columns' ;
 HEADER : 'header' ;
 LAYOUT : 'layout' ;
-ROW : 'row' ;
+ROWS : 'rows' ;
 
 CAPTION: 'caption';
 BORDER: 'border';
 ALIGN: 'align';
 
-LEFT: 'left'; // to do położenia tekstu w tab
+LEFT: 'left';
 RIGHT: 'right';
 CENTER  : 'center' ;
 
@@ -34,8 +33,6 @@ BOLD : 'bold' ;
 
 FRAME   : 'frame' ;
 GRID    : 'grid' ;
-// ROWS    : 'rows' ;
-// COLS    : 'cols' ;
 NONE    : 'none' ;
 
 INT : [0-9]+ ;

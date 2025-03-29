@@ -6,52 +6,45 @@ program
     ;
 
 table  // dodanie ew podpisów - do przemyślenia
-    : TABLE ID caption? LCURLY inside RCURLY
-    ;
-caption
-    : CAPTION COLON TEXT
+    : TABLE ID LCURLY inside RCURLY
     ;
 
 inside
-    : column head layout borderStyle? row+
+    : column align borderStyle? head rows
     ;
 
 column
     : COLUMNS COLON INT
     ;
 
-//head
-//    : HEADER COLON LCURLY TEXT (DIVIDER TEXT)* RCURLY
-//    ;
 head
-    : HEADER COLON LCURLY headerCell (DIVIDER headerCell)* RCURLY
+    : HEADER COLON LCURLY headRow RCURLY
     ;
 
-headerCell  // mozna zdef. ew. wyrówananie czy łączenie komórek
-    : formattedText (ALIGN COLON alignStyle)?
+headRow
+    : formattedText DIVIDER headRow
+    | formattedText
     ;
 
-alignStyle
-    : (LEFT | RIGHT | CENTER)?
-    ;
-
-layout
-    : LAYOUT COLON LCURLY cellLayout (DIVIDER cellLayout)* RCURLY
-    ;
-
-cellLayout
-    : (ALIGN COLON alignStyle)?
+align
+    : ALIGN COLON (LEFT | RIGHT | CENTER)
     ;
 
 borderStyle  // styl obramowanie - opcjonalne
     : BORDER COLON (FRAME | GRID | NONE)
     ;
+
+rows
+    : ROWS COLON LCURLY ( LPAREN row RPAREN )* RCURLY
+    ;
+
 row
-    : ROW COLON LCURLY content (DIVIDER content)* RCURLY
+    : content DIVIDER row
+    | content
     ;
 
 content
-    : formattedText
+    : formattedText+
     | table
     ;
 
