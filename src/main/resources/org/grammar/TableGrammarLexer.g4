@@ -18,7 +18,7 @@ TABLE : 'table' ;
 COLUMNS : 'columns' ;
 HEADER : 'header' ;
 LAYOUT : 'layout' ;
-ROW : 'row' ;
+ROWS : 'rows' ;
 
 CAPTION: 'caption';
 BORDER: 'border';

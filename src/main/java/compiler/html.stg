@@ -1,0 +1,61 @@
+group table;
+
+deflt(elem) ::= <<
+    <elem; separator="\n">
+>>
+
+table_data(a) ::= <<
+\<td>
+<a>
+\</td>
+>>
+
+row_data(a, b) ::= <<
+<a>
+<b>
+>>
+
+row(a) ::= <<
+\<tr>
+<a>
+\</tr>
+>>
+
+table_header(a) ::= <<
+\<th>
+<a>
+\</th>
+>>
+
+header_data(a, b) ::= <<
+<a>
+<b>
+>>
+
+header_row(a) ::= <<
+\<tr>
+<a>
+\</tr>
+>>
+
+table_rows(a,b) ::= <<
+<a>
+<b>
+>>
+
+table(a) ::= <<
+\<table>
+<a>
+\</table>
+>>
+
+int(i) ::= <<
+MOV A,#<i>
+>>
+
+twoop(p1, p2) ::= <<
+<p2>
+PUSH A
+<p1>
+POP B
+>>
