@@ -12,7 +12,6 @@ import org.stringtemplate.v4.STGroupFile;
 
 import java.io.FileWriter;
 import java.io.IOException;
-import java.io.Writer;
 
 public class StartCompiler {
     public static void main(String[] args) {
@@ -32,13 +31,13 @@ public class StartCompiler {
 
         //st group
 //        STGroup.trackCreationEvents = true;
-        STGroup group = new STGroupFile("src/compiler/register.stg");
+        STGroup group = new STGroupFile("src/main/java/compiler/html.stg");
 
         EmitVisitor em = new EmitVisitor(group);
         ST res = em.visit(tree);
         System.out.println(res.render());
         try {
-            var wr = new FileWriter("wy.asm");
+            var wr = new FileWriter("wy.txt");
             wr.write(res.render());
             wr.close();
         } catch (IOException e) {

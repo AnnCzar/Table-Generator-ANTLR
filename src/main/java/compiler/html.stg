@@ -21,14 +21,10 @@ row(a) ::= <<
 \</tr>
 >>
 
-table_header(a) ::= <<
+table_header(a, b) ::= <<
 \<th>
 <a>
 \</th>
->>
-
-header_data(a, b) ::= <<
-<a>
 <b>
 >>
 

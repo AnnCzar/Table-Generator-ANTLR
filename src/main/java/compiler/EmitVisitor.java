@@ -1,6 +1,5 @@
 package compiler;
 
-import org.antlr.v4.runtime.tree.TerminalNode;
 import org.grammar.TableGrammarParser;
 import org.grammar.TableGrammarParserBaseVisitor;
 import org.stringtemplate.v4.ST;
@@ -27,15 +26,33 @@ public class EmitVisitor extends TableGrammarParserBaseVisitor<ST> {
     }
 
 
+//    @Override
+//    public ST visitTerminal(TerminalNode node) {
+//        return new ST("Terminal node:<n>").add("n",node.getText());
+//    }
+
     @Override
-    public ST visitTerminal(TerminalNode node) {
-        return new ST("Terminal node:<n>").add("n",node.getText());
+    public ST visitTable(TableGrammarParser.TableContext ctx) {
+        ST table = stGroup.getInstanceOf("table");
+        return table.add("a", visit(ctx.inside()));
     }
 
     @Override
     public ST visitHead(TableGrammarParser.HeadContext ctx) {
         ST row = stGroup.getInstanceOf("header_row");
-        return null;
+        return row.add("a", visit(ctx.headRow()));
+    }
+
+    @Override
+    public ST visitHeadRow(TableGrammarParser.HeadRowContext ctx) {
+        ST row = stGroup.getInstanceOf("table_header");
+        String s = ctx.formattedText().TEXT().getText();
+        s = s.substring(1, s.length()-1);
+        if (ctx.DIVIDER() != null) {
+            return row.add("a", s).add("b", visit(ctx.headRow()));
+        } else  {
+            return row.add("a", s);
+        }
     }
 
     //    @Override
