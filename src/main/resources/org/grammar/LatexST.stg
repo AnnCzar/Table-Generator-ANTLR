@@ -1,0 +1,22 @@
+table(tableName, columns, align, border, caption, header, rows, borderD) ::= <<
+\\begin{table}[ht]
+\\centering
+\\caption{<caption>}
+
+    \\centering
+    \\begin{tabular} {<border>}
+<if(borderD)>
+    \\hline
+<endif>
+<header>
+
+<rows>
+
+\\end{tabular}
+\\label{tab:<tableName>}
+\\end{table}
+>>
+
+
+
+

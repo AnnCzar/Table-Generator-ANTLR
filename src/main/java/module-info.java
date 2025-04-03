@@ -12,6 +12,8 @@ module org.example.miasi_projekt {
     requires com.almasb.fxgl.all;
     requires java.desktop;
     requires java.logging;
+    requires org.antlr.antlr4.runtime;
+    requires ST4;
 
     opens frontend to javafx.fxml;
     exports frontend;

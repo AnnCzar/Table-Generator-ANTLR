@@ -1,17 +1,33 @@
 package org.example;
 
-//TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
-// click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
-public class Main {
-    public static void main(String[] args) {
-        //TIP Press <shortcut actionId="ShowIntentionActions"/> with your caret at the highlighted text
-        // to see how IntelliJ IDEA suggests fixing it.
-        System.out.printf("Hello and welcome!");
+import org.antlr.v4.runtime.CharStream;
+import org.antlr.v4.runtime.CharStreams;
+import org.antlr.v4.runtime.CommonTokenStream;
+import org.antlr.v4.runtime.tree.ParseTree;
+import org.grammar.TableGrammarLexer;
+import org.grammar.TableGrammarParser;
+import org.stringtemplate.v4.ST;
+import org.stringtemplate.v4.STGroup;
+import org.stringtemplate.v4.STGroupFile;
 
-        for (int i = 1; i <= 5; i++) {
-            //TIP Press <shortcut actionId="Debug"/> to start debugging your code. We have set one <icon src="AllIcons.Debugger.Db_set_breakpoint"/> breakpoint
-            // for you, but you can always add more by pressing <shortcut actionId="ToggleLineBreakpoint"/>.
-            System.out.println("i = " + i);
-        }
+public class Main {
+    public static void main(String[] args) throws Exception {
+
+        CharStream input = CharStreams.fromStream(System.in);
+
+        TableGrammarLexer lexer = new TableGrammarLexer(input);
+        CommonTokenStream tokens = new CommonTokenStream(lexer);
+
+        TableGrammarParser parser = new TableGrammarParser(tokens);
+
+        ParseTree tree = parser.program();
+
+        STGroup group = new STGroupFile("src/main/resources/org/grammar/LatexST.stg"); //otwieramy plik z .stg
+
+        TableLatexVisitor visitor = new TableLatexVisitor(group);
+        String latexCode = visitor.visit(tree);
+//        System.out.println(((ST) latexCode).render());
+        System.out.println(latexCode);
+
     }
 }

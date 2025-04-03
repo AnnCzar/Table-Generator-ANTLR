@@ -1,0 +1,16 @@
+
+
+
+table proba caption : "podpis" {
+columns : 2
+header : {  "header1" align : left | "header2" align : center | "header3" align : right}
+layout : { align : left| align: right | align: center}
+border : frame
+row: { (italic "a" bold "d"| "c") ("d" | "e") ("d" | "e") }
+}
+
+
+
+rows: { ("a" | "c")  ("d" | "e") }
+rows: { row{ cotnent| content}  row
+
