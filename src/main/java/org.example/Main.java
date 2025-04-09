@@ -10,11 +10,22 @@ import org.stringtemplate.v4.ST;
 import org.stringtemplate.v4.STGroup;
 import org.stringtemplate.v4.STGroupFile;
 
+import java.io.FileWriter;
+import java.io.IOException;
+
 public class Main {
     public static void main(String[] args) throws Exception {
+        System.out.println("Program started");
+//        CharStream input = CharStreams.fromStream(System.in);
+        CharStream input = null;
 
-        CharStream input = CharStreams.fromStream(System.in);
-
+        try {
+            System.out.println("dziala");
+            input = CharStreams.fromFileName("src/main/java/org.example/we.first");
+            System.out.println("dziala1");
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
         TableGrammarLexer lexer = new TableGrammarLexer(input);
         CommonTokenStream tokens = new CommonTokenStream(lexer);
 
@@ -26,6 +37,13 @@ public class Main {
 
         TableLatexVisitor visitor = new TableLatexVisitor(group);
         String latexCode = visitor.visit(tree);
+        try {
+            var wr = new FileWriter("C:/Users/aczar/Desktop/polibuda/MiASI_projekt/TableGenerator/kod_tabeli.txt", true);
+            wr.write(latexCode);
+            wr.close();
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
 //        System.out.println(((ST) latexCode).render());
         System.out.println(latexCode);
 

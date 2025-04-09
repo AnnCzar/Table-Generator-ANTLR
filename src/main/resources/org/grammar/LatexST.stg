@@ -1,21 +1,36 @@
-table(tableName, columns, align, border, caption, header, rows, borderD) ::= <<
+table(tableName, columns, align, border, caption, header, rows, borderD, addHlineAfterHeader) ::= <<
 \\begin{table}[ht]
 \\centering
 \\caption{<caption>}
-
-    \\centering
-    \\begin{tabular} {<border>}
+\\begin{tabular} {<border>}
 <if(borderD)>
-    \\hline
+\\hline
 <endif>
 <header>
-
+<if(addHlineAfterHeader)>
+\\hline
+<endif>
 <rows>
-
 \\end{tabular}
 \\label{tab:<tableName>}
 \\end{table}
 >>
+
+
+tableIN(tableName, columns, align, border, header, rows, borderD, addHlineAfterHeader) ::= <<
+\\begin{tabular} {@{}<border>@{}}
+<if(borderD)>
+\\hline
+<endif>
+<header>
+
+<if(addHlineAfterHeader)>
+\\hline
+<endif>
+<rows>
+\\end{tabular}
+>>
+
 
 
 

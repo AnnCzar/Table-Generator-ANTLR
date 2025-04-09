@@ -1,16 +1,53 @@
-
-
-
-table proba caption : "podpis" {
-columns : 2
-header : {  "header1" align : left | "header2" align : center | "header3" align : right}
-layout : { align : left| align: right | align: center}
+table proba {
+columns : 3
+align : center
 border : frame
-row: { (italic "a" bold "d"| "c") ("d" | "e") ("d" | "e") }
+header : {  "header1" | "header2" | "header3" }
+rows: { (italic "a" bold "d"| "c") ("d" | "e") ("d" | table proba1 {
+                                                     columns 2
+                                                     align : center
+                                                     border : frame
+                                                     header : {  "header1"  | "header2"}
+                                                     rows: { (italic "a" bold "d"| "c") ("d" | "e") ("d" | "e") }
+                                                     }
+) }
 }
 
+
+table proba1 {
+columns 2
+header : {  "header1" align : left | "header2" align : center}
+layout : { align : left| align: center}
+border : frame
+row: { (italic "a" bold "d"| "c") ("d" | "e") ("d" | "e") }
+
+}
 
 
 rows: { ("a" | "c")  ("d" | "e") }
 rows: { row{ cotnent| content}  row
+
+
+
+
+table outerTable {
+  columns: 3
+  align: center
+  border: grid
+  header: { "Header 1" | "Header 2" | "Header 3" }
+  rows: {
+    ("Data 1" | "Data 2" | "Data 3")
+    ("A" | table innerTable {
+                columns: 2
+                align: left
+                border: grid
+                header: { "Nested H1" | "Nested H2" }
+                rows: { ("X" | "Y") ("Z" | "W") }
+              } | "C")
+    ("D" | "E" | "F")
+  }
+}
+
+
+- usunąć jak jest zagniezdzona tabela to trzeba ususnac te begin table
 

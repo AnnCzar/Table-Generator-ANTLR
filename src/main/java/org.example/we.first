@@ -1,0 +1,10 @@
+table withEmpty {
+    columns: 2
+    align: center
+    border:none
+    header: {"A"|"B"|"C"}
+    rows: {
+        (" "|"Not empty"|" ")
+        (" "|" "|" ")
+    }
+}
