@@ -1,0 +1,473 @@
+<div class="table-container table-withEmpty">
+  <div class="table-caption">Table: withEmpty</div>
+  <div class="table-header">
+    <div class="flex-row">
+      <div class="flex-row">
+        <div class="flex-cell">A</div>
+        <div class="flex-row">
+          <div class="flex-cell">B</div>
+          <div class="flex-row">
+            <div class="flex-cell">C</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="table-body">
+    <div class="flex-row">
+      <div class="flex-cell"> </div>
+      <div class="flex-row">
+        <div class="flex-cell">Not empty</div>
+        <div class="flex-row">
+          <div class="flex-cell"> </div>
+        </div>
+      </div>
+    </div>
+    <div class="flex-row">
+      <div class="flex-cell"> </div>
+      <div class="flex-row">
+        <div class="flex-cell"> </div>
+        <div class="flex-row">
+          <div class="flex-cell"> </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<style>
+  .table-withEmpty {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    margin-bottom: 20px;
+    border: none;
+  }
+
+  .table-withEmpty .table-caption {
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 10px;
+  }
+
+  .table-withEmpty .table-header {
+    font-weight: bold;
+    background-color: #f2f2f2;
+  }
+
+  .table-withEmpty .flex-row {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    text-align: center;
+  }
+
+  .table-withEmpty .flex-cell {
+    flex: 1;
+    padding: 8px;
+    border: none;
+  }
+</style><div class="table-container table-withEmpty">
+  <div class="table-caption">Table: withEmpty</div>
+  <div class="table-header">
+    <div class="flex-row">
+      <div class="flex-row">
+        <div class="flex-cell">A</div>
+        <div class="flex-row">
+          <div class="flex-cell">B</div>
+          <div class="flex-row">
+            <div class="flex-cell">C</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="table-body">
+    <div class="flex-row">
+      <div class="flex-cell"> a</div>
+      <div class="flex-row">
+        <div class="flex-cell">Not empty</div>
+        <div class="flex-row">
+          <div class="flex-cell"> s</div>
+        </div>
+      </div>
+    </div>
+    <div class="flex-row">
+      <div class="flex-cell"> a</div>
+      <div class="flex-row">
+        <div class="flex-cell"> b</div>
+        <div class="flex-row">
+          <div class="flex-cell">c </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<style>
+  .table-withEmpty {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    margin-bottom: 20px;
+    border: none;
+  }
+
+  .table-withEmpty .table-caption {
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 10px;
+  }
+
+  .table-withEmpty .table-header {
+    font-weight: bold;
+    background-color: #f2f2f2;
+  }
+
+  .table-withEmpty .flex-row {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    text-align: center;
+  }
+
+  .table-withEmpty .flex-cell {
+    flex: 1;
+    padding: 8px;
+    border: none;
+  }
+</style><div class="table-container table-withEmpty">
+  <div class="table-caption">Table: withEmpty</div>
+  <div class="table-header">
+    <div class="flex-row">
+      <div class="flex-row">
+        <div class="flex-cell">A</div>
+        <div class="flex-row">
+          <div class="flex-cell">B</div>
+          <div class="flex-row">
+            <div class="flex-cell">C</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="table-body">
+    <div class="flex-row">
+      <div class="flex-cell"> a</div>
+      <div class="flex-row">
+        <div class="flex-cell">Not empty</div>
+        <div class="flex-row">
+          <div class="flex-cell"> s</div>
+        </div>
+      </div>
+    </div>
+    <div class="flex-row">
+      <div class="flex-cell"> a</div>
+      <div class="flex-row">
+        <div class="flex-cell"> b</div>
+        <div class="flex-row">
+          <div class="flex-cell">c </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<style>
+  .table-withEmpty {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    margin-bottom: 20px;
+    border: none;
+  }
+
+  .table-withEmpty .table-caption {
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 10px;
+  }
+
+  .table-withEmpty .table-header {
+    font-weight: bold;
+    background-color: #f2f2f2;
+  }
+
+  .table-withEmpty .flex-row {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    text-align: center;
+  }
+
+  .table-withEmpty .flex-cell {
+    flex: 1;
+    padding: 8px;
+    border: none;
+  }
+</style><div class="table-container table-table1">
+  <div class="table-caption">Table: table1</div>
+  <div class="table-header">
+    <div class="flex-row">
+      <div class="flex-row">
+        <div class="flex-cell"><strong>Title</strong></div>
+        <div class="flex-row">
+          <div class="flex-cell"><em>Author</em></div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="table-body">
+    <div class="flex-row">
+      <div class="flex-cell"><strong>Book 1</strong></div>
+      <div class="flex-row">
+        <div class="flex-cell">Author A</div>
+      </div>
+    </div>
+    <div class="flex-row">
+      <div class="flex-cell"><em>Book 2</em></div>
+      <div class="flex-row">
+        <div class="flex-cell"><strong>Author B</strong></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<style>
+  .table-table1 {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    margin-bottom: 20px;
+    border: 1px solid #ddd;
+  }
+
+  .table-table1 .table-caption {
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 10px;
+  }
+
+  .table-table1 .table-header {
+    font-weight: bold;
+    background-color: #f2f2f2;
+  }
+
+  .table-table1 .flex-row {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    text-align: center;
+  }
+
+  .table-table1 .flex-cell {
+    flex: 1;
+    padding: 8px;
+    border: 1px solid #ddd;
+  }
+</style><div class="table-container table-table1">
+  <div class="table-caption">Table: table1</div>
+  <div class="table-header">
+    <div class="flex-row">
+      <div class="flex-row">
+        <div class="flex-cell"><strong>Title</strong></div>
+        <div class="flex-row">
+          <div class="flex-cell"><em>Author</em></div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="table-body">
+    <div class="flex-row">
+      <div class="flex-cell"><strong>Book 1</strong></div>
+      <div class="flex-row">
+        <div class="flex-cell">Author A</div>
+      </div>
+    </div>
+    <div class="flex-row">
+      <div class="flex-cell"><em>Book 2</em></div>
+      <div class="flex-row">
+        <div class="flex-cell"><strong>Author B</strong></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<style>
+  .table-table1 {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    margin-bottom: 20px;
+    border: 1px solid #ddd;
+  }
+
+  .table-table1 .table-caption {
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 10px;
+  }
+
+  .table-table1 .table-header {
+    font-weight: bold;
+    background-color: #f2f2f2;
+  }
+
+  .table-table1 .flex-row {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    text-align: center;
+  }
+
+  .table-table1 .flex-cell {
+    flex: 1;
+    padding: 8px;
+    border: 1px solid #ddd;
+  }
+</style><div class="table-container table-table1">
+  <div class="table-caption">Table: table1</div>
+  <div class="table-header">
+    <div class="flex-row">
+      <em>Author</em>
+    </div>
+  </div>
+  <div class="table-body">
+  </div>
+</div>
+
+<style>
+  .table-table1 {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    margin-bottom: 20px;
+    border: 1px solid #ddd;
+  }
+
+  .table-table1 .table-caption {
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 10px;
+  }
+
+  .table-table1 .table-header {
+    font-weight: bold;
+    background-color: #f2f2f2;
+  }
+
+  .table-table1 .flex-row {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    text-align: center;
+  }
+
+  .table-table1 .flex-cell {
+    flex: 1;
+    padding: 8px;
+    border: 1px solid #ddd;
+  }
+</style><div class="table-container table-table1">
+  <div class="table-caption">Table: table1</div>
+  <div class="table-header">
+    <div class="flex-row">
+      <div class="flex-cell"><strong>Title</strong></div><div class="flex-cell"><em>Author</em></div>
+    </div>
+  </div>
+  <div class="table-body">
+    <div class="flex-row">
+      <div class="flex-cell"><strong>Book 1</strong></div><div class="flex-cell">Author A</div>
+    </div>
+    <div class="flex-row">
+      <div class="flex-cell"><em>Book 2</em></div><div class="flex-cell"><strong>Author B</strong></div>
+    </div>
+  </div>
+</div>
+
+<style>
+  .table-table1 {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    margin-bottom: 20px;
+    border: 1px solid #ddd;
+  }
+
+  .table-table1 .table-caption {
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 10px;
+  }
+
+  .table-table1 .table-header {
+    font-weight: bold;
+    background-color: #f2f2f2;
+  }
+
+  .table-table1 .flex-row {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    text-align: center;
+  }
+
+  .table-table1 .flex-cell {
+    flex: 1;
+    padding: 8px;
+    border: 1px solid #ddd;
+  }
+</style><div class="table-container table-table1">
+  <div class="table-caption">Table: table1</div>
+  <div class="table-header">
+    <div class="flex-row">
+      <div class="flex-row">
+        <div class="flex-cell"><strong>Title</strong></div><div class="flex-cell"><em>Author</em></div>
+      </div>
+    </div>
+  </div>
+  <div class="table-body">
+    <div class="flex-row">
+      <div class="flex-cell"><strong>Book 1</strong></div>
+      <div class="flex-cell">Author A</div>
+    </div>
+    <div class="flex-row">
+      <div class="flex-cell"><em>Book 2</em></div>
+      <div class="flex-cell"><strong>Author B</strong></div>
+    </div>
+  </div>
+</div>
+
+<style>
+  .table-table1 {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    margin-bottom: 20px;
+    border: 1px solid #ddd;
+  }
+
+  .table-table1 .table-caption {
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 10px;
+  }
+
+  .table-table1 .table-header {
+    font-weight: bold;
+    background-color: #f2f2f2;
+  }
+
+  .table-table1 .flex-row {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    text-align: center;
+  }
+
+  .table-table1 .flex-cell {
+    flex: 1;
+    padding: 8px;
+    border: 1px solid #ddd;
+  }
+</style>

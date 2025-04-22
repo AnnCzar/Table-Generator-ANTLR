@@ -37,7 +37,7 @@ public class TableLatexVisitor extends TableGrammarParserBaseVisitor<String> {
         // Domyślny align, jeśli nie podano
         String align = (ctx.inside().align() != null)
                 ? visit(ctx.inside().align())
-                : "c";
+                : "c"; // domyślnie wyrówananie center
         tableLatex.add("align", align);
 
         String borderStyleStr = ctx.inside().borderStyle() != null

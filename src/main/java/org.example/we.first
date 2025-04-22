@@ -1,10 +1,9 @@
-table withEmpty {
+table table1 {
     columns: 2
     align: center
-    border:none
-    header: {"A"|"B"|"C"}
+    header: {bold "Title"|italic "Author"}
     rows: {
-        (" "|"Not empty"|" ")
-        (" "|" "|" ")
+        (bold "Book 1"|"Author A")
+        (italic "Book 2"|bold "Author B")
     }
 }

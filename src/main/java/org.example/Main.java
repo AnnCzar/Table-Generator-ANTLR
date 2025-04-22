@@ -33,12 +33,16 @@ public class Main {
 
         ParseTree tree = parser.program();
 
-        STGroup group = new STGroupFile("src/main/resources/org/grammar/LatexST.stg"); //otwieramy plik z .stg
+//        STGroup group = new STGroupFile("src/main/resources/org/grammar/LatexST.stg"); //otwieramy plik z .stg
+        STGroup group = new STGroupFile("src/main/resources/org/grammar/HTMLFlexST.stg"); //otwieramy plik z .stg
 
-        TableLatexVisitor visitor = new TableLatexVisitor(group);
-        String latexCode = visitor.visit(tree);
+//        TableLatexVisitor visitor = new TableLatexVisitor(group);
+
+        TableHtmlFlexVisitor visitor = new TableHtmlFlexVisitor(group);
+        String latexCode = visitor.visit(tree);   // nie chcialo mi sie zmianiac anzwy
         try {
-            var wr = new FileWriter("C:/Users/aczar/Desktop/polibuda/MiASI_projekt/TableGenerator/kod_tabeli.txt", true);
+//            var wr = new FileWriter("C:kod_tabeli.txt", true);
+            var wr = new FileWriter("C:proba.html", true);
             wr.write(latexCode);
             wr.close();
         } catch (IOException e) {
