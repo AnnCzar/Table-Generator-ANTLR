@@ -1,0 +1,135 @@
+// tableHtmlFlex.stg
+table(tableName, columns, align, border, header, rows, borderStyle) ::= <<
+\<div class="table-container table-<tableName>"\>
+  \<div class="table-caption"\>Table: <tableName>\</div\>
+  \<div class="table-header"\>
+    \<div class="flex-row"\>
+      <header>
+    \</div\>
+  \</div\>
+  \<div class="table-body"\>
+    <rows>
+  \</div\>
+\</div\>
+
+\<style\>
+  .table-<tableName> {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    margin-bottom: 20px;
+    <if(borderStyle)>
+    <borderStyle>
+    <endif>
+  }
+
+  .table-<tableName> .table-caption {
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 10px;
+  }
+
+  .table-<tableName> .table-header {
+    font-weight: bold;
+    background-color: #f2f2f2;
+  }
+
+  .table-<tableName> .flex-row {
+    display: flex;
+    flex-direction: row;
+    <if(align)>
+    <align>
+    <endif>
+  }
+
+  .table-<tableName> .flex-cell {
+    flex: 1;
+    padding: 8px;
+    <if(borderStyle)>
+    <borderStyle>
+    <endif>
+  }
+\</style\>
+>>
+
+tableIN(tableName, columns, align, border, header, rows, borderStyle) ::= <<
+\<div class="nested-table nested-table-<tableName>"\>
+  \<div class="table-header"\>
+    \<div class="flex-row"\>
+      <header>
+    \</div\>
+  \</div\>
+  \<div class="table-body"\>
+    <rows>
+  \</div\>
+\</div\>
+
+\<style\>
+  .nested-table-<tableName> {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    <if(borderStyle)>
+    <borderStyle>
+    <endif>
+  }
+
+  .nested-table-<tableName> .table-header {
+    font-weight: bold;
+    background-color: #e6e6e6;
+  }
+
+  .nested-table-<tableName> .flex-row {
+    display: flex;
+    flex-direction: row;
+    <if(align)>
+    <align>
+    <endif>
+  }
+
+  .nested-table-<tableName> .flex-cell {
+    flex: 1;
+    padding: 4px;
+    <if(borderStyle)>
+    <borderStyle>
+    <endif>
+  }
+\</style\>
+>>
+
+row(cells) ::= <<
+\<div class="flex-row"\>
+  <cells>
+\</div\>
+>>
+
+cell(content) ::= <<
+\<div class="flex-cell"\><content>\</div\>
+>>
+
+borderGrid() ::= <<
+border: 1px solid #ddd;
+>>
+
+borderFrame() ::= <<
+border: 1px solid #ddd;
+>>
+
+borderNone() ::= <<
+border: none;
+>>
+
+alignLeft() ::= <<
+justify-content: flex-start;
+text-align: left;
+>>
+
+alignRight() ::= <<
+justify-content: flex-end;
+text-align: right;
+>>
+
+alignCenter() ::= <<
+justify-content: center;
+text-align: center;
+>>

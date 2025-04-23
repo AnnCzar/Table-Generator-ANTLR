@@ -102,6 +102,7 @@ public class MainController implements Initializable {
             Stage stage = (Stage) generateButton.getScene().getWindow();
             double x = generateButton.localToScreen(0, 0).getX();
             double y = generateButton.localToScreen(0, generateButton.getHeight()).getY();
+            //tutaj przekazac do visitora w zależnosi
 
             popup.show(stage, x, y);
         } else {
@@ -132,10 +133,12 @@ public class MainController implements Initializable {
             case "Z pliku w formacie .txt":
                 searchButton.setVisible(true);
                 tableInput.setDisable(true);
+                System.out.println("z pliku: " + tableInput.getText());
                 break;
             case "Wprowadź ręcznie":
                 searchButton.setVisible(false);
                 tableInput.setDisable(false);
+                System.out.println("ręcznie " + tableInput.getText());
                 break;
             default:
                 searchButton.setVisible(false);

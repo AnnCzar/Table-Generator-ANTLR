@@ -1,0 +1,9 @@
+table table1 {
+    columns: 2
+    align: center
+    header: {bold "Title"|italic "Author"}
+    rows: {
+        (bold "Book 1"|"Author A")
+        (italic "Book 2"|bold "Author B")
+    }
+}
