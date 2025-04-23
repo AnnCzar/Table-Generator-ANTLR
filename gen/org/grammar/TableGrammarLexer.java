@@ -1,4 +1,6 @@
+
 // Generated from C:/Users/aczar/Desktop/polibuda/MiASI_projekt/TableGenerator/src/main/resources/org/grammar/TableGrammarLexer.g4 by ANTLR 4.13.2
+
 package org.grammar;
 import org.antlr.v4.runtime.Lexer;
 import org.antlr.v4.runtime.CharStream;

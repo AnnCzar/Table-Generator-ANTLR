@@ -11,6 +11,7 @@ import javafx.scene.control.*;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.Pane;
+import javafx.scene.text.Text;
 import javafx.stage.FileChooser;
 import javafx.stage.Popup;
 import javafx.stage.Stage;
@@ -26,8 +27,6 @@ import java.util.Objects;
 import java.util.ResourceBundle;
 
 public class MainController implements Initializable {
-    @FXML
-    Pane pane;
 
     @FXML
     private ComboBox<String> tableInputChoice;
@@ -61,6 +60,11 @@ public class MainController implements Initializable {
 
     @FXML
     Button peepButton;
+
+    @FXML
+    Text generatedCode;
+
+
 
     private Popup popup;
     private File selectedFile;
@@ -199,6 +203,7 @@ public class MainController implements Initializable {
             generatedTable.setVisible(true);
             generatedTable.setEditable(false);
             peepButton.setVisible(true);
+            generatedCode.setVisible(true);
 
         } else {
             popup = new Popup();

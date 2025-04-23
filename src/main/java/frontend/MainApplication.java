@@ -2,7 +2,9 @@ package frontend;
 
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
+import javafx.geometry.Rectangle2D;
 import javafx.scene.Scene;
+import javafx.stage.Screen;
 import javafx.stage.Stage;
 
 import java.io.IOException;
@@ -26,17 +28,18 @@ public class MainApplication extends Application {
             //        Image icon = new Image(""); \\ tu sie doda logo jesli bedziemy miec//
             //        stage.getIcons().add(icon);
 
+            Rectangle2D screenBounds = Screen.getPrimary().getVisualBounds();
+            stage.setX(screenBounds.getMinX());
+            stage.setY(screenBounds.getMinY());
+            stage.setWidth(screenBounds.getWidth());
+            stage.setHeight(screenBounds.getHeight());
+
+            stage.setResizable(true);
+
         }
         catch (Exception e) {
             e.printStackTrace();
         }
-//        Rectangle2D screenBounds = Screen.getPrimary().getVisualBounds();
-//        stage.setX(screenBounds.getMinX());
-//        stage.setY(screenBounds.getMinY());
-//        stage.setWidth(800);
-//        stage.setHeight(800);
-
-
 
 
 
