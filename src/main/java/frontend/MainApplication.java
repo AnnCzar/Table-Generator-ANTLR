@@ -6,11 +6,14 @@ import javafx.geometry.Rectangle2D;
 import javafx.scene.Scene;
 import javafx.stage.Screen;
 import javafx.stage.Stage;
+import org.antlr.runtime.CharStream;
+import org.antlr.v4.runtime.CharStreams;
 
 import java.io.IOException;
 import java.util.Objects;
 
 public class MainApplication extends Application {
+
     @Override
     public void start(Stage stage) throws IOException {
         try {
@@ -41,11 +44,7 @@ public class MainApplication extends Application {
             e.printStackTrace();
         }
 
-
-
-
     }
-
     public static void main(String[] args) {
         launch(args);
     }

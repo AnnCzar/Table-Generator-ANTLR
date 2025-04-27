@@ -27,19 +27,19 @@
                   <Font name="Calibri" size="18.0" />
                </font>
             </Text>
-            <ComboBox fx:id="tableInputChoice" layoutX="98.0" layoutY="148.0" onAction="#chooseTableFormat" prefHeight="30.0" prefWidth="262.0" promptText="sposób wprowadzenia tabeli" />
+            <ComboBox fx:id="tableInputChoice" layoutX="98.0" layoutY="148.0" onAction="#chooseTableInput" prefHeight="30.0" prefWidth="262.0" promptText="sposób wprowadzenia tabeli" />
             <Button fx:id="searchButton" layoutX="440.0" layoutY="148.0" mnemonicParsing="false" onAction="#chooseFile" visible="false" />
             <Button fx:id="helpButton" layoutX="440.0" layoutY="90.0" mnemonicParsing="false" onAction="#showPopup" />
-            <TextArea fx:id="tableInput" disable="true" layoutX="98.0" layoutY="198.0" maxHeight="500.0" maxWidth="600.0" prefHeight="400.0" prefWidth="500.0" visible="true">
+            <TextArea fx:id="tableInput" disable="true" layoutX="98.0" layoutY="198.0" maxHeight="600.0" maxWidth="700.0" prefHeight="500.0" prefWidth="600.0" visible="true">
                <font>
-                  <Font name="Calibri" size="16.0" />
+                  <Font name="Calibri" size="18.0" />
                </font></TextArea>
-            <Text layoutX="98.0" layoutY="638.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Wybierz wyjściowy format tabeli">
+            <Text layoutX="98.0" layoutY="743.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Wybierz wyjściowy format tabeli">
                <font>
                   <Font name="Calibri" size="18.0" />
                </font>
             </Text>
-            <RadioButton fx:id="latexRadio" layoutX="103.0" layoutY="653.0" mnemonicParsing="false" text="LaTeX">
+            <RadioButton fx:id="latexRadio" layoutX="103.0" layoutY="758.0" mnemonicParsing="false" text="LaTeX">
                <toggleGroup>
                   <ToggleGroup fx:id="tableFormat" />
                </toggleGroup>
@@ -47,15 +47,15 @@
                   <Font name="Calibri" size="18.0" />
                </font>
             </RadioButton>
-            <RadioButton fx:id="htmlRadio" layoutX="243.0" layoutY="653.0" mnemonicParsing="false" text="html" toggleGroup="$tableFormat">
+            <RadioButton fx:id="htmlRadio" layoutX="243.0" layoutY="758.0" mnemonicParsing="false" text="html" toggleGroup="$tableFormat">
                <font>
                   <Font name="Calibri" size="18.0" />
                </font></RadioButton>
-            <RadioButton fx:id="htmlFlexRadio" layoutX="357.0" layoutY="653.0" mnemonicParsing="false" text="html flex" toggleGroup="$tableFormat">
+            <RadioButton fx:id="htmlFlexRadio" layoutX="357.0" layoutY="758.0" mnemonicParsing="false" text="html flex" toggleGroup="$tableFormat">
                <font>
                   <Font name="Calibri" size="18.0" />
                </font></RadioButton>
-            <Button fx:id="generateButton" layoutX="232.0" layoutY="733.0" mnemonicParsing="false" onAction="#generateTable" text="Wygeneruj tabelę">
+            <Button fx:id="generateButton" layoutX="232.0" layoutY="838.0" mnemonicParsing="false" onAction="#generateTable" text="Wygeneruj tabelę">
                <font>
                   <Font name="Calibri" size="18.0" />
                </font></Button>
@@ -69,12 +69,12 @@
                   <Font name="Calibri" size="36.0" />
                </font>
             </Text>
-            <TextArea fx:id="generatedTable" disable="true" maxHeight="500.0" maxWidth="600.0" prefHeight="400.0" prefWidth="500.0" visible="false">
+            <TextArea fx:id="generatedTable" disable="false" maxHeight="600.0" maxWidth="700.0" prefHeight="500.0" prefWidth="600.0" visible="false">
                <font>
                   <Font name="Calibri" size="18.0" />
                </font></TextArea>
             <Region prefHeight="20.0" />
-            <Button fx:id="peepButton" mnemonicParsing="false" text="Podgląd tabeli" visible="false">
+            <Button fx:id="peepButton" mnemonicParsing="false" onAction="#peepTable" text="Podgląd tabeli" visible="false">
                <font>
                   <Font name="Calibri" size="18.0" />
                </font></Button>

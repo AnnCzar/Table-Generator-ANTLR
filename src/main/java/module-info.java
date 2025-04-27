@@ -14,6 +14,7 @@ module org.example.miasi_projekt {
     requires java.logging;
     requires org.antlr.antlr4.runtime;
     requires ST4;
+    requires antlr.runtime;
 
     opens frontend to javafx.fxml;
     exports frontend;

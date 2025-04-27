@@ -14,15 +14,50 @@ import java.io.FileWriter;
 import java.io.IOException;
 
 public class Main {
+    private static String option;
+    private static String filename;
+    private static String tableInput;
+    private static String format ;
+    private static String output;
+
+    public static void setOption(String selectedOption) {
+        option = selectedOption;
+    }
+
+    public static void setFilename(String file) {
+        filename = file;
+    }
+
+    public static void setTableInput(String input) {
+        tableInput = input;
+    }
+    public static void setFormat(String tableFormat) {
+        format = tableFormat;
+
+    }
+
+    public static void setOutput(String tableOutput) {
+        output = tableOutput;
+    }
+    public static String getOutput() {
+        return output;
+    }
+
     public static void main(String[] args) throws Exception {
         System.out.println("Program started");
 //        CharStream input = CharStreams.fromStream(System.in);
         CharStream input = null;
-
+        // dać wybór ze z pisanego tekstu  moze byc
         try {
             System.out.println("dziala");
-            input = CharStreams.fromFileName("src/main/java/org.example/we.first");
-            System.out.println("dziala1");
+            if(option.equals("Z pliku w formacie .txt")){
+                input = CharStreams.fromFileName(filename);
+                System.out.println("dziala1");
+            }
+            else {
+                input = CharStreams.fromString(tableInput);
+            }
+
         } catch (IOException e) {
             throw new RuntimeException(e);
         }
@@ -32,24 +67,60 @@ public class Main {
         TableGrammarParser parser = new TableGrammarParser(tokens);
 
         ParseTree tree = parser.program();
+        System.out.println(format);
 
-//        STGroup group = new STGroupFile("src/main/resources/org/grammar/LatexST.stg"); //otwieramy plik z .stg
-        STGroup group = new STGroupFile("src/main/resources/org/grammar/HTMLFlexST.stg"); //otwieramy plik z .stg
-
-//        TableLatexVisitor visitor = new TableLatexVisitor(group);
-
-        TableHtmlFlexVisitor visitor = new TableHtmlFlexVisitor(group);
-        String latexCode = visitor.visit(tree);   // nie chcialo mi sie zmianiac anzwy
-        try {
-//            var wr = new FileWriter("C:kod_tabeli.txt", true);
-            var wr = new FileWriter("C:proba.html", true);
-            wr.write(latexCode);
-            wr.close();
-        } catch (IOException e) {
-            throw new RuntimeException(e);
-        }
+        if (format.equals("LaTeX")) {
+            STGroup group = new STGroupFile("src/main/resources/org/grammar/LatexST.stg"); //otwieramy plik z .stg
+            TableLatexVisitor visitor = new TableLatexVisitor(group);
+            String latexCode = visitor.visit(tree);
+            setOutput(latexCode);
+            String texCode = "\\documentclass{article}\n" +
+                    "\\begin{document}\n" +
+                    latexCode + "\n" +
+                    "\\end{document}";
+            try {
+                var wr = new FileWriter("C:latex.txt", true);
+                var wr_current = new FileWriter("C:latex_current.tex", false);
+                wr.write(latexCode);
+                wr_current.write(texCode);
+                wr.close();
+                wr_current.close();
+            }
+            catch (IOException e) {
+                throw new RuntimeException(e);
+            }
 //        System.out.println(((ST) latexCode).render());
-        System.out.println(latexCode);
+
+            System.out.println(latexCode);
+
+
+        } else if (format.equals("html flex")) {
+            STGroup group = new STGroupFile("src/main/resources/org/grammar/HTMLFlexST.stg"); //otwieramy plik z .stg
+            TableHtmlFlexVisitor visitor = new TableHtmlFlexVisitor(group);
+            String htmlFlexCode = visitor.visit(tree);   // nie chcialo mi sie zmianiac anzwy
+            setOutput(htmlFlexCode);
+            try {
+                var wr = new FileWriter("C:flex.html", true);
+                var wr_current = new FileWriter("C:flex_current.html", false);
+                wr.write(htmlFlexCode);
+                wr_current.write(htmlFlexCode);
+                wr.close();
+                wr_current.close();
+            } catch (IOException e) {
+                throw new RuntimeException(e);
+            }
+
+            System.out.println(htmlFlexCode);
+
+        } else {
+
+            System.out.println("to do");
+
+        }
+
+//
+
+
 
     }
 }
