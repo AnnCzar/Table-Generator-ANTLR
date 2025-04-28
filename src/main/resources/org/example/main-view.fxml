@@ -6,79 +6,117 @@
 <?import javafx.scene.control.SplitPane?>
 <?import javafx.scene.control.TextArea?>
 <?import javafx.scene.control.ToggleGroup?>
-<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.Region?>
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<SplitPane dividerPositions="0.5" orientation="HORIZONTAL" prefHeight="738.0" prefWidth="1272.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="frontend.MainController">
+<SplitPane dividerPositions="0.5" orientation="HORIZONTAL" prefHeight="800.0" prefWidth="1300.0"
+           xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1"
+           fx:controller="frontend.MainController">
 
    <items>
-      <AnchorPane prefHeight="762.0" prefWidth="641.0">
-         <children>
-            <Text fx:id="title" layoutX="98.0" layoutY="59.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Generator tabeli" textAlignment="CENTER">
-               <font>
-                  <Font name="Calibri" size="36.0" />
-               </font>
-            </Text>
-            <Text fx:id="tableFormInfo" layoutX="98.0" layoutY="109.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Wprowadź tabelę  w odpowiednim formacie ">
-               <font>
-                  <Font name="Calibri" size="18.0" />
-               </font>
-            </Text>
-            <ComboBox fx:id="tableInputChoice" layoutX="98.0" layoutY="148.0" onAction="#chooseTableInput" prefHeight="30.0" prefWidth="262.0" promptText="sposób wprowadzenia tabeli" />
-            <Button fx:id="searchButton" layoutX="440.0" layoutY="148.0" mnemonicParsing="false" onAction="#chooseFile" visible="false" />
-            <Button fx:id="helpButton" layoutX="440.0" layoutY="90.0" mnemonicParsing="false" onAction="#showPopup" />
-            <TextArea fx:id="tableInput" disable="true" layoutX="98.0" layoutY="198.0" maxHeight="600.0" maxWidth="700.0" prefHeight="500.0" prefWidth="600.0" visible="true">
-               <font>
-                  <Font name="Calibri" size="18.0" />
-               </font></TextArea>
-            <Text layoutX="98.0" layoutY="743.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Wybierz wyjściowy format tabeli">
-               <font>
-                  <Font name="Calibri" size="18.0" />
-               </font>
-            </Text>
-            <RadioButton fx:id="latexRadio" layoutX="103.0" layoutY="758.0" mnemonicParsing="false" text="LaTeX">
-               <toggleGroup>
-                  <ToggleGroup fx:id="tableFormat" />
-               </toggleGroup>
-               <font>
-                  <Font name="Calibri" size="18.0" />
-               </font>
-            </RadioButton>
-            <RadioButton fx:id="htmlRadio" layoutX="243.0" layoutY="758.0" mnemonicParsing="false" text="html" toggleGroup="$tableFormat">
-               <font>
-                  <Font name="Calibri" size="18.0" />
-               </font></RadioButton>
-            <RadioButton fx:id="htmlFlexRadio" layoutX="357.0" layoutY="758.0" mnemonicParsing="false" text="html flex" toggleGroup="$tableFormat">
-               <font>
-                  <Font name="Calibri" size="18.0" />
-               </font></RadioButton>
-            <Button fx:id="generateButton" layoutX="232.0" layoutY="838.0" mnemonicParsing="false" onAction="#generateTable" text="Wygeneruj tabelę">
-               <font>
-                  <Font name="Calibri" size="18.0" />
-               </font></Button>
-         </children>
-      </AnchorPane>
 
-      <VBox alignment="TOP_CENTER" prefHeight="794.0" prefWidth="645.0" spacing="10.0" style="-fx-padding: 59 0 0 0;">
+      <VBox spacing="20" alignment="TOP_CENTER" prefWidth="641.0" prefHeight="762.0" style="-fx-padding: 40 20 20 20;">
          <children>
-            <Text fx:id="generatedCode" strokeType="OUTSIDE" strokeWidth="0.0" text="Wygenerowany kod tabeli:" visible="false">
+
+            <Text fx:id="title" text="Generator tabeli" textAlignment="CENTER">
                <font>
-                  <Font name="Calibri" size="36.0" />
+                  <Font name="Calibri" size="36.0"/>
                </font>
             </Text>
-            <TextArea fx:id="generatedTable" disable="false" maxHeight="600.0" maxWidth="700.0" prefHeight="500.0" prefWidth="600.0" visible="false">
+
+            <HBox spacing="10" alignment="CENTER_LEFT">
+               <children>
+
+                  <Text fx:id="tableFormInfo" text="Wprowadź tabelę w odpowiednim formacie">
+                     <font>
+                        <Font name="Calibri" size="18.0"/>
+                     </font>
+                  </Text>
+
+                  <Button fx:id="helpButton" onAction="#showPopup" prefWidth="40.0" prefHeight="40.0"/>
+
+               </children>
+            </HBox>
+
+            <HBox spacing="10" alignment="CENTER">
+               <children>
+               <ComboBox fx:id="tableInputChoice" onAction="#chooseTableInput" prefHeight="30.0" prefWidth="300.0" promptText="Sposób wprowadzenia tabeli"/>
+               <Button fx:id="searchButton" onAction="#chooseFile" text="Wczytaj plik" visible="false" prefWidth="40.0" prefHeight="40.0"/>
+               </children>
+            </HBox>
+
+            <TextArea fx:id="tableInput" disable="true" prefHeight="400.0" prefWidth="600.0" visible="true">
                <font>
-                  <Font name="Calibri" size="18.0" />
-               </font></TextArea>
-            <Region prefHeight="20.0" />
-            <Button fx:id="peepButton" mnemonicParsing="false" onAction="#peepTable" text="Podgląd tabeli" visible="false">
+                  <Font name="Calibri" size="18.0"/>
+               </font>
+            </TextArea>
+
+            <Text text="Wybierz wyjściowy format tabeli">
                <font>
-                  <Font name="Calibri" size="18.0" />
-               </font></Button>
+                  <Font name="Calibri" size="18.0"/>
+               </font>
+            </Text>
+
+            <HBox spacing="20" alignment="CENTER">
+               <RadioButton fx:id="latexRadio" mnemonicParsing="false" text="LaTeX">
+                  <toggleGroup>
+                     <ToggleGroup fx:id="tableFormat" />
+                  </toggleGroup>
+                  <font>
+                     <Font name="Calibri" size="18.0"/>
+                  </font>
+               </RadioButton>
+
+               <RadioButton fx:id="htmlRadio" mnemonicParsing="false" text="html" toggleGroup="$tableFormat">
+                  <font>
+                     <Font name="Calibri" size="18.0"/>
+                  </font>
+               </RadioButton>
+
+               <RadioButton fx:id="htmlFlexRadio" mnemonicParsing="false" text="html flex" toggleGroup="$tableFormat">
+                  <font>
+                     <Font name="Calibri" size="18.0"/>
+                  </font>
+               </RadioButton>
+            </HBox>
+
+            <Button fx:id="generateButton" text="Wygeneruj tabelę" onAction="#generateTable" prefWidth="200.0">
+               <font>
+                  <Font name="Calibri" size="18.0"/>
+               </font>
+            </Button>
+
          </children>
       </VBox>
+
+      <VBox alignment="TOP_CENTER" prefHeight="794.0" prefWidth="645.0" spacing="20.0" style="-fx-padding: 40 20 20 20;">
+         <children>
+
+            <Text fx:id="generatedCode" strokeType="OUTSIDE" strokeWidth="0.0" text="Wygenerowany kod tabeli:" visible="false">
+               <font>
+                  <Font name="Calibri" size="36.0"/>
+               </font>
+            </Text>
+
+            <TextArea fx:id="generatedTable" disable="false" maxHeight="600.0" maxWidth="700.0" prefHeight="500.0" prefWidth="600.0" visible="false">
+               <font>
+                  <Font name="Calibri" size="18.0"/>
+               </font>
+            </TextArea>
+
+            <Region prefHeight="20.0"/>
+
+            <Button fx:id="peepButton" mnemonicParsing="false" onAction="#peepTable" text="Podgląd tabeli" visible="false" prefWidth="200.0">
+               <font>
+                  <Font name="Calibri" size="18.0"/>
+               </font>
+            </Button>
+
+         </children>
+      </VBox>
+
    </items>
 </SplitPane>

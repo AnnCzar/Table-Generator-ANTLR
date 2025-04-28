@@ -120,6 +120,9 @@ public class MainController implements Initializable {
 
         setSVGIcon(helpButton, "/org/example/images/help_24dp_E3E3E3_FILL0_wght400_GRAD0_opsz24.svg");
         setSVGIcon(searchButton, "/org/example/images/folder_24dp_E3E3E3_FILL0_wght400_GRAD0_opsz24.svg");
+        searchButton.setText("");
+        helpButton.setText("");
+
     }
 
     @FXML
@@ -141,8 +144,6 @@ public class MainController implements Initializable {
             Stage stage = (Stage) generateButton.getScene().getWindow();
             double x = generateButton.localToScreen(0, 0).getX();
             double y = generateButton.localToScreen(0, generateButton.getHeight()).getY();
-            //tutaj przekazac do visitora w zależnosi
-
             popup.show(stage, x, y);
         } else {
             popup.hide();

@@ -1,0 +1,139 @@
+\begin{table}[ht]
+\centering
+\caption{}
+\begin{tabular} {|ccc|}
+\hline
+Product & Details & Suppliers \\
+Laptop & \begin{tabular} {@{}|cc|@{}}
+\hline
+Spec & Value \\
+
+CPU & i7-11800H \\
+RAM & 16GB \\
+Storage & \begin{tabular} {@{}|cc|@{}}
+\hline
+Type & Size \\
+
+SSD & 512GB \\
+HDD & 1TB \\
+\hline
+\end{tabular} \\
+\hline
+\end{tabular} & \begin{tabular} {@{}|c|@{}}
+\hline
+Vendor \\
+
+TechCorp \\
+ElectroWorld \\
+\hline
+\end{tabular} \\
+Smartphone & \begin{tabular} {@{}|cc|@{}}
+\hline
+Feature & Value \\
+
+Screen & 6.5 AMOLED \\
+Camera & \begin{tabular} {@{}|cc|@{}}
+\hline
+Lens & MP \\
+
+Main & 48 \\
+Ultrawide & 12 \\
+Macro & 5 \\
+\hline
+\end{tabular} \\
+\hline
+\end{tabular} & \begin{tabular} {@{}|cc|@{}}
+\hline
+Region & Sellers \\
+
+Europe & \begin{tabular} {@{}|c|@{}}
+\hline
+Company \\
+
+MobileEU \\
+PhoneShop \\
+\hline
+\end{tabular} \\
+Asia & \begin{tabular} {@{}|c|@{}}
+\hline
+Company \\
+
+AsiaTech \\
+DigitalEast \\
+\hline
+\end{tabular} \\
+\hline
+\end{tabular} \\
+\hline
+\end{tabular}
+\label{tab:complexNested}
+\end{table}\begin{table}[ht]
+\centering
+\caption{}
+\begin{tabular} {|ccc|}
+\hline
+Product & Details & Suppliers \\
+Laptop & \begin{tabular} {@{}|cc|@{}}
+\hline
+Spec & Value \\
+
+CPU & i7-11800H \\
+RAM & 16GB \\
+Storage & \begin{tabular} {@{}|cc|@{}}
+\hline
+Type & Size \\
+
+SSD & 512GB \\
+HDD & 1TB \\
+\hline
+\end{tabular} \\
+\hline
+\end{tabular} & \begin{tabular} {@{}|c|@{}}
+\hline
+Vendor \\
+
+TechCorp \\
+ElectroWorld \\
+\hline
+\end{tabular} \\
+Smartphone & \begin{tabular} {@{}|cc|@{}}
+\hline
+Feature & Value \\
+
+Screen & 6.5 AMOLED \\
+Camera & \begin{tabular} {@{}|cc|@{}}
+\hline
+Lens & MP \\
+
+Main & 48 \\
+Ultrawide & 12 \\
+Macro & 5 \\
+\hline
+\end{tabular} \\
+\hline
+\end{tabular} & \begin{tabular} {@{}|cc|@{}}
+\hline
+Region & Sellers \\
+
+Europe & \begin{tabular} {@{}|c|@{}}
+\hline
+Company \\
+
+MobileEU \\
+PhoneShop \\
+\hline
+\end{tabular} \\
+Asia & \begin{tabular} {@{}|c|@{}}
+\hline
+Company \\
+
+AsiaTech \\
+DigitalEast \\
+\hline
+\end{tabular} \\
+\hline
+\end{tabular} \\
+\hline
+\end{tabular}
+\label{tab:complexNested}
+\end{table}
