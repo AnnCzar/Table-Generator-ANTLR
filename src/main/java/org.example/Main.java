@@ -47,7 +47,6 @@ public class Main {
         System.out.println("Program started");
 //        CharStream input = CharStreams.fromStream(System.in);
         CharStream input = null;
-        // dać wybór ze z pisanego tekstu  moze byc
         try {
             System.out.println("dziala");
             if(option.equals("Z pliku w formacie .txt")){
@@ -97,7 +96,7 @@ public class Main {
         } else if (format.equals("html flex")) {
             STGroup group = new STGroupFile("src/main/resources/org/grammar/HTMLFlexST.stg"); //otwieramy plik z .stg
             TableHtmlFlexVisitor visitor = new TableHtmlFlexVisitor(group);
-            String htmlFlexCode = visitor.visit(tree);   // nie chcialo mi sie zmianiac anzwy
+            String htmlFlexCode = visitor.visit(tree);
             setOutput(htmlFlexCode);
             try {
                 var wr = new FileWriter("C:flex.html", true);
@@ -113,8 +112,24 @@ public class Main {
             System.out.println(htmlFlexCode);
 
         } else {
+            STGroup group = new STGroupFile("src/main/resources/org/grammar/HtmlST.stg"); //otwieramy plik z .stg
+            TableHtmlFlexVisitor visitor = new TableHtmlFlexVisitor(group);
+            String htmlCode = visitor.visit(tree);
+            setOutput(htmlCode);
+            try {
+                var wr = new FileWriter("C:html_table.html", true);
+                var wr_current = new FileWriter("C:html_table_current.html", false);
+                wr.write(htmlCode);
+                wr_current.write(htmlCode);
+                wr.close();
+                wr_current.close();
+            } catch (IOException e) {
+                throw new RuntimeException(e);
+            }
 
-            System.out.println("to do");
+            System.out.println(htmlCode);
+
+
 
         }
 

@@ -303,7 +303,10 @@ public class MainController implements Initializable {
 
                         break;
                     case "html":
-                        System.out.println("to do");
+                        File htmlFile = new File("C:html_table_current.html");
+                        if (htmlFile.exists()) {
+                            Desktop.getDesktop().browse(htmlFile.toURI());
+                        }
                         break;
                 }
             } catch (Exception e) {

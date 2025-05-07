@@ -1,0 +1,108 @@
+table(tableName, columns, align, border, header, rows, borderStyle) ::= <<
+\<table class="table-<tableName>"\>
+  \<caption\>Table: <tableName>\</caption\>
+  \<thead\>
+    \<tr\>
+      <header>
+    \</tr\>
+  \</thead\>
+  \<tbody\>
+    <rows>
+  \</tbody\>
+\</table\>
+
+\<style\>
+  .table-<tableName> {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 20px;
+    <if(borderStyle)>
+    <borderStyle>
+    <endif>
+  }
+
+  .table-<tableName> caption {
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 10px;
+  }
+
+  .table-<tableName> th, .table-<tableName> td {
+    padding: 8px;
+    <if(align)>
+    <align>
+    <endif>
+    <if(borderStyle)>
+    <borderStyle>
+    <endif>
+  }
+
+  .table-<tableName> thead {
+    background-color: #f2f2f2;
+  }
+\</style\>
+>>
+
+tableIN(tableName, columns, align, border, header, rows, borderStyle) ::= <<
+\<table class="nested-table-<tableName>"\>
+  \<thead\>
+    \<tr\>
+      <header>
+    \</tr\>
+  \</thead\>
+  \<tbody\>
+    <rows>
+  \</tbody\>
+\</table\>
+
+\<style\>
+  .nested-table-<tableName> {
+    width: 100%;
+    border-collapse: collapse;
+    <if(borderStyle)>
+    <borderStyle>
+    <endif>
+  }
+
+  .nested-table-<tableName> th, .nested-table-<tableName> td {
+    padding: 4px;
+    <if(align)>
+    <align>
+    <endif>
+    <if(borderStyle)>
+    <borderStyle>
+    <endif>
+  }
+
+  .nested-table-<tableName> thead {
+    background-color: #e6e6e6;
+  }
+\</style\>
+>>
+
+row(cells) ::= <<
+\<tr\>
+  <cells>
+\</tr\>
+>>
+cell(content) ::= <<
+\<td\><content>\</td\>
+>>
+borderGrid() ::= <<
+border: 1px solid #ddd;
+>>
+borderFrame() ::= <<
+border: 1px solid black;
+>>
+borderNone() ::= <<
+border: none;
+>>
+alignLeft() ::= <<
+text-align: left;
+>>
+alignRight() ::= <<
+text-align: right;
+>>
+alignCenter() ::= <<
+text-align: center;
+>>

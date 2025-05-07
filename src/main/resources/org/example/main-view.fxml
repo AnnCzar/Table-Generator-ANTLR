@@ -27,9 +27,8 @@
                </font>
             </Text>
 
-            <HBox spacing="10" alignment="CENTER_LEFT">
+            <HBox spacing="10" alignment="CENTER">
                <children>
-
                   <Text fx:id="tableFormInfo" text="Wprowadź tabelę w odpowiednim formacie">
                      <font>
                         <Font name="Calibri" size="18.0"/>
