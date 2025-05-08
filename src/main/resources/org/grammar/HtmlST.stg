@@ -38,7 +38,7 @@ table(tableName, columns, align, border, header, rows, borderStyle) ::= <<
   }
 
   .table-<tableName> thead {
-    background-color: #f2f2f2;
+    background-color: #ffffff;
   }
 \</style\>
 >>
@@ -92,7 +92,7 @@ borderGrid() ::= <<
 border: 1px solid #ddd;
 >>
 borderFrame() ::= <<
-border: 1px solid black;
+border: 1px solid #ddd;
 >>
 borderNone() ::= <<
 border: none;

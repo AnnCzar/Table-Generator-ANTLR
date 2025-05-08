@@ -3,10 +3,8 @@ table(tableName, columns, align, border, header, rows, borderStyle) ::= <<
 \<div class="table-container table-<tableName>"\>
   \<div class="table-caption"\>Table: <tableName>\</div\>
   \<div class="table-header"\>
-    \<div class="flex-row"\>
-      <header>
-    \</div\>
-  \</div\>
+        <header>
+      \</div\>
   \<div class="table-body"\>
     <rows>
   \</div\>
@@ -29,9 +27,9 @@ table(tableName, columns, align, border, header, rows, borderStyle) ::= <<
     margin-bottom: 10px;
   }
 
+
   .table-<tableName> .table-header {
-    font-weight: bold;
-    background-color: #f2f2f2;
+    background-color: #ffffff;
   }
 
   .table-<tableName> .flex-row {
@@ -55,10 +53,8 @@ table(tableName, columns, align, border, header, rows, borderStyle) ::= <<
 tableIN(tableName, columns, align, border, header, rows, borderStyle) ::= <<
 \<div class="nested-table nested-table-<tableName>"\>
   \<div class="table-header"\>
-    \<div class="flex-row"\>
-      <header>
-    \</div\>
-  \</div\>
+          <header>
+        \</div\>
   \<div class="table-body"\>
     <rows>
   \</div\>
@@ -75,8 +71,7 @@ tableIN(tableName, columns, align, border, header, rows, borderStyle) ::= <<
   }
 
   .nested-table-<tableName> .table-header {
-    font-weight: bold;
-    background-color: #e6e6e6;
+    background-color: #ffffff;
   }
 
   .nested-table-<tableName> .flex-row {

@@ -93,7 +93,7 @@ public class Main {
             System.out.println(latexCode);
 
 
-        } else if (format.equals("html flex")) {
+        } else if (format.equals("CSS Flexbox")) {
             STGroup group = new STGroupFile("src/main/resources/org/grammar/HTMLFlexST.stg"); //otwieramy plik z .stg
             TableHtmlFlexVisitor visitor = new TableHtmlFlexVisitor(group);
             String htmlFlexCode = visitor.visit(tree);

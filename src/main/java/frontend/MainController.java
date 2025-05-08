@@ -284,7 +284,7 @@ public class MainController implements Initializable {
         if (selectedFormat != null) {
             try {
                 switch (selectedFormat) {
-                    case "html flex":
+                    case "CSS Flexbox":
                         File htmlFileFlex = new File("C:flex_current.html");
                         if (htmlFileFlex.exists()) {
                             Desktop.getDesktop().browse(htmlFileFlex.toURI());
@@ -302,7 +302,7 @@ public class MainController implements Initializable {
                         }
 
                         break;
-                    case "html":
+                    case "HTML":
                         File htmlFile = new File("C:html_table_current.html");
                         if (htmlFile.exists()) {
                             Desktop.getDesktop().browse(htmlFile.toURI());

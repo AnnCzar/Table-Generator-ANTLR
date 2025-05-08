@@ -69,13 +69,13 @@
                   </font>
                </RadioButton>
 
-               <RadioButton fx:id="htmlRadio" mnemonicParsing="false" text="html" toggleGroup="$tableFormat">
+               <RadioButton fx:id="htmlRadio" mnemonicParsing="false" text="HTML" toggleGroup="$tableFormat">
                   <font>
                      <Font name="Calibri" size="18.0"/>
                   </font>
                </RadioButton>
 
-               <RadioButton fx:id="htmlFlexRadio" mnemonicParsing="false" text="html flex" toggleGroup="$tableFormat">
+               <RadioButton fx:id="htmlFlexRadio" mnemonicParsing="false" text="CSS Flexbox" toggleGroup="$tableFormat">
                   <font>
                      <Font name="Calibri" size="18.0"/>
                   </font>
