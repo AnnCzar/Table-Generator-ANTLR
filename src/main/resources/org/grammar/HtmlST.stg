@@ -16,9 +16,7 @@ table(tableName, columns, align, border, header, rows, borderStyle) ::= <<
     width: 100%;
     border-collapse: collapse;
     margin-bottom: 20px;
-    <if(borderStyle)>
     <borderStyle>
-    <endif>
   }
 
   .table-<tableName> caption {
@@ -31,9 +29,6 @@ table(tableName, columns, align, border, header, rows, borderStyle) ::= <<
     padding: 8px;
     <if(align)>
     <align>
-    <endif>
-    <if(borderStyle)>
-    <borderStyle>
     <endif>
   }
 
@@ -59,18 +54,13 @@ tableIN(tableName, columns, align, border, header, rows, borderStyle) ::= <<
   .nested-table-<tableName> {
     width: 100%;
     border-collapse: collapse;
-    <if(borderStyle)>
     <borderStyle>
-    <endif>
   }
 
   .nested-table-<tableName> th, .nested-table-<tableName> td {
     padding: 4px;
     <if(align)>
     <align>
-    <endif>
-    <if(borderStyle)>
-    <borderStyle>
     <endif>
   }
 
@@ -79,24 +69,48 @@ tableIN(tableName, columns, align, border, header, rows, borderStyle) ::= <<
   }
 \</style\>
 >>
-
-row(cells) ::= <<
+row(cells, isNested) ::= <<
 \<tr\>
   <cells>
 \</tr\>
 >>
-cell(content) ::= <<
+cell(content, isNested) ::= <<
 \<td\><content>\</td\>
 >>
-borderGrid() ::= <<
+
+borderGrid(isNested) ::= <<
 border: 1px solid #ddd;
+
+th, td {
+  border: 1px solid #ddd;
+}
 >>
-borderFrame() ::= <<
+
+
+borderFrame(isNested) ::= <<
 border: 1px solid #ddd;
+
+.<if(isNested)>nested-row<else>flex-row<endif> {
+  border-bottom: none;
+}
+
+.<if(isNested)>nested-cell<else>flex-cell<endif> {
+  border-right: none;
+}
 >>
-borderNone() ::= <<
+
+borderNone(isNested) ::= <<
 border: none;
+
+.<if(isNested)>nested-row<else>flex-row<endif> {
+  border: none;
+}
+
+.<if(isNested)>nested-cell<else>flex-cell<endif> {
+  border: none;
+}
 >>
+
 alignLeft() ::= <<
 text-align: left;
 >>
