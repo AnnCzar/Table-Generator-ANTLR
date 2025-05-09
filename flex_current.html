@@ -1,52 +1,127 @@
-<div class="table-container table-withEmpty">
-  <div class="table-caption">Table: withEmpty</div>
+<div class="table-container table-parentTable">
+  <div class="table-caption">Table: parentTable</div>
   <div class="table-header">
         <div class="flex-row">
-          <div class="flex-cell">A</div><div class="flex-cell">B</div><div class="flex-cell">C</div>
+          <div class="flex-cell">Main</div><div class="flex-cell">Nested</div>
         </div>
       </div>
   <div class="table-body">
     <div class="flex-row">
-      <div class="flex-cell"> </div>
-      <div class="flex-cell">Not empty</div>
-      <div class="flex-cell"> </div>
+      <div class="flex-cell">Data 1</div>
+      <div class="flex-cell"><div class="nested-table nested-table-nested">
+        <div class="table-header">
+                <div class="flex-row">
+                  <div class="flex-cell">Inner</div>
+                </div>
+              </div>
+        <div class="table-body">
+          <div class="flex-row">
+            <div class="flex-cell">Nested 1</div>
+          </div>
+          <div class="flex-row">
+            <div class="flex-cell"><div class="nested-table nested-table-nestedd">
+              <div class="table-header">
+                      <div class="flex-row">
+                        <div class="flex-cell">Inner</div>
+                      </div>
+                    </div>
+              <div class="table-body">
+                <div class="flex-row">
+                  <div class="flex-cell">Nested 1</div>
+                </div>
+                <div class="flex-row">
+                  <div class="flex-cell">Nested 2</div>
+                </div>
+              </div>
+            </div>
+
+            <style>
+              .nested-table.nested-table-nestedd {
+                display: flex;
+                flex-direction: column;
+                width: 100%;
+                border: none !important;
+              }
+
+              .nested-table.nested-table-nestedd .flex-row {
+                display: flex;
+                flex-direction: row;
+                justify-content: flex-start;
+                text-align: left; !important;
+              }
+
+
+              .nested-table.nested-table-nestedd > .table-header > .flex-row > .flex-cell,
+              .nested-table.nested-table-nestedd > .table-body > .flex-row > .flex-cell {
+                flex: 1;
+                padding: 4px;
+                border: none !important;
+              }
+            </style></div>
+          </div>
+        </div>
+      </div>
+
+      <style>
+        .nested-table.nested-table-nested {
+          display: flex;
+          flex-direction: column;
+          width: 100%;
+          border: none !important;
+        }
+
+        .nested-table.nested-table-nested .flex-row {
+          display: flex;
+          flex-direction: row;
+          justify-content: flex-end;
+          text-align: right; !important;
+        }
+
+
+        .nested-table.nested-table-nested > .table-header > .flex-row > .flex-cell,
+        .nested-table.nested-table-nested > .table-body > .flex-row > .flex-cell {
+          flex: 1;
+          padding: 4px;
+          border: none !important;
+        }
+      </style></div>
     </div>
     <div class="flex-row">
-      <div class="flex-cell"> </div>
-      <div class="flex-cell"> </div>
-      <div class="flex-cell"> </div>
+      <div class="flex-cell">Data 2</div>
+      <div class="flex-cell">Simple</div>
     </div>
   </div>
 </div>
 
 <style>
-  .table-withEmpty {
+  .table-parentTable {
     display: flex;
     flex-direction: column;
     width: 100%;
     margin-bottom: 20px;
-    border: 1px solid #ddd;
+    border-collapse: collapse;
   }
 
-  .table-withEmpty .table-caption {
+  .table-parentTable .table-caption {
     font-weight: bold;
     text-align: center;
     margin-bottom: 10px;
   }
 
 
-  .table-withEmpty .table-header {
+  .table-parentTable .table-header {
     background-color: #ffffff;
   }
 
-  .table-withEmpty .flex-row {
+  .table-parentTable .flex-row {
     display: flex;
     flex-direction: row;
     justify-content: center;
     text-align: center;
   }
 
-  .table-withEmpty .flex-cell {
+  .table-parentTable > .table-header > .flex-row > .flex-cell,
+  .table-parentTable > .table-body > .flex-row > .flex-cell {
     flex: 1;
     padding: 8px;
     border: 1px solid #ddd;

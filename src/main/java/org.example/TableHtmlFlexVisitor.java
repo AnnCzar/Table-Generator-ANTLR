@@ -46,7 +46,63 @@ public class TableHtmlFlexVisitor extends TableGrammarParserBaseVisitor<String> 
                 : "grid";
         this.currentBorderStyle = borderStyleStr;
 
-        tableHtml.add("borderStyle", getBorderStyleCSS(borderStyleStr));
+//        tableHtml.add("borderStyle", getBorderStyleCSS(borderStyleStr));
+//        switch (borderStyleStr.toLowerCase()) {
+//            case "grid":
+//                tableHtml.add("tableBorderStyle", stGroup.getInstanceOf("borderGridTable").render());
+//                tableHtml.add("cellBorderStyle", stGroup.getInstanceOf("borderGridCell").render());
+//                break;
+//            case "frame":
+//                tableHtml.add("tableBorderStyle", stGroup.getInstanceOf("borderFrameTable").render());
+//                tableHtml.add("cellBorderStyle", stGroup.getInstanceOf("borderFrameCell").render());
+//                break;
+//            case "none":
+//                tableHtml.add("tableBorderStyle", stGroup.getInstanceOf("borderNoneTable").render());
+//                tableHtml.add("cellBorderStyle", stGroup.getInstanceOf("borderNoneCell").render());
+//                break;
+//            default:
+//                tableHtml.add("tableBorderStyle", stGroup.getInstanceOf("borderGridTable").render());
+//                tableHtml.add("cellBorderStyle", stGroup.getInstanceOf("borderGridCell").render());
+//        }
+        if (isNested) {
+            // Dla zagnieżdżonych tabel używamy bardziej specyficznych selektorów
+            switch (borderStyleStr.toLowerCase()) {
+                case "grid":
+                    tableHtml.add("tableBorderStyle", "border-collapse: collapse");
+                    tableHtml.add("cellBorderStyle", "border: 1px solid #ddd");
+                    break;
+                case "frame":
+                    tableHtml.add("tableBorderStyle", "border: 1px solid #ddd; border-collapse: collapse");
+                    tableHtml.add("cellBorderStyle", "border: none");
+                    break;
+                case "none":
+                    tableHtml.add("tableBorderStyle", "border: none");
+                    tableHtml.add("cellBorderStyle", "border: none");
+                    break;
+                default:
+                    tableHtml.add("tableBorderStyle", "border-collapse: collapse");
+                    tableHtml.add("cellBorderStyle", "border: 1px solid #ddd");
+            }
+        } else {
+            // Dla głównych tabel
+            switch (borderStyleStr.toLowerCase()) {
+                case "grid":
+                    tableHtml.add("tableBorderStyle", stGroup.getInstanceOf("borderGridTable").render());
+                    tableHtml.add("cellBorderStyle", stGroup.getInstanceOf("borderGridCell").render());
+                    break;
+                case "frame":
+                    tableHtml.add("tableBorderStyle", stGroup.getInstanceOf("borderFrameTable").render());
+                    tableHtml.add("cellBorderStyle", stGroup.getInstanceOf("borderFrameCell").render());
+                    break;
+                case "none":
+                    tableHtml.add("tableBorderStyle", stGroup.getInstanceOf("borderNoneTable").render());
+                    tableHtml.add("cellBorderStyle", stGroup.getInstanceOf("borderNoneCell").render());
+                    break;
+                default:
+                    tableHtml.add("tableBorderStyle", stGroup.getInstanceOf("borderGridTable").render());
+                    tableHtml.add("cellBorderStyle", stGroup.getInstanceOf("borderGridCell").render());
+            }
+        }
 
         tableHtml.add("header", visitHeadRow(ctx.inside().head().headRow()));
         tableHtml.add("rows", visitRows(ctx.inside().rows()));

@@ -712,4 +712,25 @@ DigitalEast \\
 \hline
 \end{tabular}
 \label{tab:complexNested}
+\end{table}\begin{table}[ht]
+\centering
+\caption{}
+\begin{tabular} {|c|c|}
+\hline
+Main & Nested \\
+\hline
+Data 1 & \begin{tabular} {@{}r@{}}
+Inner \\
+
+Nested 1 \\
+\begin{tabular} {@{}l@{}}
+Inner \\
+
+Nested 1 \\
+Nested 2
+\end{tabular}
+\end{tabular} \\ \hline
+Data 2 & Simple \\ \hline
+\end{tabular}
+\label{tab:parentTable}
 \end{table}

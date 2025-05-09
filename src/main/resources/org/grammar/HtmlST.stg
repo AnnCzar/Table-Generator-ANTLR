@@ -1,4 +1,4 @@
-table(tableName, columns, align, border, header, rows, borderStyle) ::= <<
+table(tableName, columns, align, border, header, rows, tableBorderStyle, cellBorderStyle) ::= <<
 \<table class="table-<tableName>"\>
   \<caption\>Table: <tableName>\</caption\>
   \<thead\>
@@ -16,8 +16,8 @@ table(tableName, columns, align, border, header, rows, borderStyle) ::= <<
     width: 100%;
     border-collapse: collapse;
     margin-bottom: 20px;
-    <if(borderStyle)>
-    <borderStyle>
+    <if(tableBorderStyle)>
+    <tableBorderStyle>
     <endif>
   }
 
@@ -26,25 +26,27 @@ table(tableName, columns, align, border, header, rows, borderStyle) ::= <<
     text-align: center;
     margin-bottom: 10px;
   }
-
-  .table-<tableName> th, .table-<tableName> td {
+  .table-<tableName> th,
+  .table-<tableName> td {
     padding: 8px;
     <if(align)>
     <align>
     <endif>
-    <if(borderStyle)>
-    <borderStyle>
+  }
+  .table-<tableName> > thead > tr > th,
+  .table-<tableName> > tbody > tr > td {
+    <if(cellBorderStyle)>
+    <cellBorderStyle>
     <endif>
   }
-
   .table-<tableName> thead {
     background-color: #ffffff;
   }
 \</style\>
 >>
 
-tableIN(tableName, columns, align, border, header, rows, borderStyle) ::= <<
-\<table class="nested-table-<tableName>"\>
+tableIN(tableName, columns, align, border, header, rows, tableBorderStyle, cellBorderStyle) ::= <<
+\<table class="nested-table nested-table-<tableName>"\>
   \<thead\>
     \<tr\>
       <header>
@@ -56,26 +58,28 @@ tableIN(tableName, columns, align, border, header, rows, borderStyle) ::= <<
 \</table\>
 
 \<style\>
-  .nested-table-<tableName> {
+ table.nested-table.nested-table-<tableName> {
     width: 100%;
-    border-collapse: collapse;
-    <if(borderStyle)>
-    <borderStyle>
+    <if(tableBorderStyle)>
+    <tableBorderStyle> !important;
     <endif>
   }
-
-  .nested-table-<tableName> th, .nested-table-<tableName> td {
+  table.nested-table.nested-table-<tableName> th,
+  table.nested-table.nested-table-<tableName> td {
     padding: 4px;
     <if(align)>
-    <align>
+    <align> !important;
     <endif>
-    <if(borderStyle)>
-    <borderStyle>
+  }
+ table.nested-table.nested-table-<tableName> > thead > tr > th,
+  table.nested-table.nested-table-<tableName> > tbody > tr > td {
+    <if(cellBorderStyle)>
+    <cellBorderStyle> !important;
     <endif>
   }
 
-  .nested-table-<tableName> thead {
-    background-color: #e6e6e6;
+  table.nested-table.nested-table-<tableName> thead {
+    background-color: #ffffff;
   }
 \</style\>
 >>
@@ -88,13 +92,27 @@ row(cells) ::= <<
 cell(content) ::= <<
 \<td\><content>\</td\>
 >>
-borderGrid() ::= <<
+borderGridTable() ::= <<
+border-collapse: collapse;
+>>
+
+borderGridCell() ::= <<
 border: 1px solid #ddd;
 >>
-borderFrame() ::= <<
+
+borderFrameTable() ::= <<
 border: 1px solid #ddd;
+border-collapse: collapse;
 >>
-borderNone() ::= <<
+
+borderFrameCell() ::= <<
+>>
+
+borderNoneTable() ::= <<
+border: none;
+>>
+
+borderNoneCell() ::= <<
 border: none;
 >>
 alignLeft() ::= <<
