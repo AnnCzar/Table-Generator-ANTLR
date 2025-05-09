@@ -1,52 +1,169 @@
-<div class="table-container table-tabela1">
-  <div class="table-caption">Table: tabela1</div>
+<div class="main-table table-parentTable">
+  <div class="table-caption">Table: parentTable</div>
   <div class="table-header">
     <div class="flex-row">
       <div class="flex-row">
-        <div class="flex-cell">kolumna1</div><div class="flex-cell">kolumna2</div><div class="flex-cell">cx</div><div class="flex-cell">kolumna4</div>
+        <div class="flex-cell">Main</div><div class="flex-cell">Nested</div>
       </div>
     </div>
   </div>
   <div class="table-body">
     <div class="flex-row">
-      <div class="flex-cell">sdkj</div>
-      <div class="flex-cell">fdf</div>
-      <div class="flex-cell"></div>
-      <div class="flex-cell">sds</div>
+      <div class="flex-cell">Data 1</div>
+      <div class="flex-cell"><div class="nested-table nested-table-nested">
+        <div class="nested-header">
+          <div class="nested-row">
+            <div class="nested-row">
+              <div class="nested-cell">Inner</div>
+            </div>
+          </div>
+        </div>
+        <div class="nested-body">
+          <div class="nested-row">
+            <div class="nested-cell">Nested 1</div>
+          </div>
+          <div class="nested-row">
+            <div class="nested-cell"><div class="nested-table nested-table-nested">
+              <div class="nested-header">
+                <div class="nested-row">
+                  <div class="nested-row">
+                    <div class="nested-cell">Inner</div>
+                  </div>
+                </div>
+              </div>
+              <div class="nested-body">
+                <div class="nested-row">
+                  <div class="nested-cell">Nested 1</div>
+                </div>
+                <div class="nested-row">
+                  <div class="nested-cell">Nested 2</div>
+                </div>
+              </div>
+            </div>
+
+            <style>
+              .nested-table.nested-table-nested {
+                display: flex;
+                flex-direction: column;
+                width: 100%;
+                border: none;
+
+                .nested-row {
+                  border: none;
+                }
+
+                .nested-cell {
+                  border: none;
+                }
+              }
+
+              .nested-table.nested-table-nested .nested-header {
+                font-weight: bold;
+                background-color: #e6e6e6;
+              }
+
+              .nested-table.nested-table-nested .nested-row {
+                display: flex;
+                flex-direction: row;
+                justify-content: flex-end;
+                text-align: right;
+              }
+
+              .nested-table.nested-table-nested .nested-cell {
+                flex: 1;
+                padding: 4px;
+              }
+            </style></div>
+          </div>
+        </div>
+      </div>
+
+      <style>
+        .nested-table.nested-table-nested {
+          display: flex;
+          flex-direction: column;
+          width: 100%;
+          border: 1px solid #ddd;
+
+          .nested-row {
+            border-bottom: none;
+          }
+
+          .nested-cell {
+            border-right: none;
+          }
+        }
+
+        .nested-table.nested-table-nested .nested-header {
+          font-weight: bold;
+          background-color: #e6e6e6;
+        }
+
+        .nested-table.nested-table-nested .nested-row {
+          display: flex;
+          flex-direction: row;
+          justify-content: flex-end;
+          text-align: right;
+        }
+
+        .nested-table.nested-table-nested .nested-cell {
+          flex: 1;
+          padding: 4px;
+        }
+      </style></div>
+    </div>
+    <div class="flex-row">
+      <div class="flex-cell">Data 2</div>
+      <div class="flex-cell">Simple</div>
     </div>
   </div>
 </div>
 
 <style>
-  .table-tabela1 {
+  .main-table.table-parentTable {
     display: flex;
     flex-direction: column;
     width: 100%;
     margin-bottom: 20px;
-    border: none;
+    border: 1px solid #ddd;
+
+    .flex-row {
+      border-bottom: 1px solid #ddd;
+    }
+
+    .flex-cell {
+      border-right: 1px solid #ddd;
+    }
+
+    .flex-row:last-child {
+      border-bottom: none;
+    }
+
+    .flex-row .flex-cell:last-child {
+      border-right: none;
+    }
   }
 
-  .table-tabela1 .table-caption {
+  .main-table.table-parentTable .table-caption {
     font-weight: bold;
     text-align: center;
     margin-bottom: 10px;
   }
 
-  .table-tabela1 .table-header {
+  .main-table.table-parentTable .table-header {
     font-weight: bold;
     background-color: #f2f2f2;
   }
 
-  .table-tabela1 .flex-row {
+  .main-table.table-parentTable .flex-row {
     display: flex;
     flex-direction: row;
     justify-content: center;
     text-align: center;
   }
 
-  .table-tabela1 .flex-cell {
+  .main-table.table-parentTable .flex-cell {
     flex: 1;
     padding: 8px;
-    border: none;
   }
 </style>

@@ -1,6 +1,5 @@
-// tableHtmlFlex.stg
 table(tableName, columns, align, border, header, rows, borderStyle) ::= <<
-\<div class="table-container table-<tableName>"\>
+\<div class="main-table table-<tableName>"\>
   \<div class="table-caption"\>Table: <tableName>\</div\>
   \<div class="table-header"\>
     \<div class="flex-row"\>
@@ -13,28 +12,26 @@ table(tableName, columns, align, border, header, rows, borderStyle) ::= <<
 \</div\>
 
 \<style\>
-  .table-<tableName> {
+  .main-table.table-<tableName> {
     display: flex;
     flex-direction: column;
     width: 100%;
     margin-bottom: 20px;
-    <if(borderStyle)>
     <borderStyle>
-    <endif>
   }
 
-  .table-<tableName> .table-caption {
+  .main-table.table-<tableName> .table-caption {
     font-weight: bold;
     text-align: center;
     margin-bottom: 10px;
   }
 
-  .table-<tableName> .table-header {
+  .main-table.table-<tableName> .table-header {
     font-weight: bold;
     background-color: #f2f2f2;
   }
 
-  .table-<tableName> .flex-row {
+  .main-table.table-<tableName> .flex-row {
     display: flex;
     flex-direction: row;
     <if(align)>
@@ -42,44 +39,39 @@ table(tableName, columns, align, border, header, rows, borderStyle) ::= <<
     <endif>
   }
 
-  .table-<tableName> .flex-cell {
+  .main-table.table-<tableName> .flex-cell {
     flex: 1;
     padding: 8px;
-    <if(borderStyle)>
-    <borderStyle>
-    <endif>
   }
 \</style\>
 >>
 
 tableIN(tableName, columns, align, border, header, rows, borderStyle) ::= <<
 \<div class="nested-table nested-table-<tableName>"\>
-  \<div class="table-header"\>
-    \<div class="flex-row"\>
+  \<div class="nested-header"\>
+    \<div class="nested-row"\>
       <header>
     \</div\>
   \</div\>
-  \<div class="table-body"\>
+  \<div class="nested-body"\>
     <rows>
   \</div\>
 \</div\>
 
 \<style\>
-  .nested-table-<tableName> {
+  .nested-table.nested-table-<tableName> {
     display: flex;
     flex-direction: column;
     width: 100%;
-    <if(borderStyle)>
     <borderStyle>
-    <endif>
   }
 
-  .nested-table-<tableName> .table-header {
+  .nested-table.nested-table-<tableName> .nested-header {
     font-weight: bold;
     background-color: #e6e6e6;
   }
 
-  .nested-table-<tableName> .flex-row {
+  .nested-table.nested-table-<tableName> .nested-row {
     display: flex;
     flex-direction: row;
     <if(align)>
@@ -87,36 +79,65 @@ tableIN(tableName, columns, align, border, header, rows, borderStyle) ::= <<
     <endif>
   }
 
-  .nested-table-<tableName> .flex-cell {
+  .nested-table.nested-table-<tableName> .nested-cell {
     flex: 1;
     padding: 4px;
-    <if(borderStyle)>
-    <borderStyle>
-    <endif>
   }
 \</style\>
 >>
 
-row(cells) ::= <<
-\<div class="flex-row"\>
+row(cells, isNested) ::= <<
+\<div class="<if(isNested)>nested-row<else>flex-row<endif>"\>
   <cells>
 \</div\>
 >>
 
-cell(content) ::= <<
-\<div class="flex-cell"\><content>\</div\>
+cell(content, isNested) ::= <<
+\<div class="<if(isNested)>nested-cell<else>flex-cell<endif>"\><content>\</div\>
 >>
 
-borderGrid() ::= <<
+borderGrid(isNested) ::= <<
 border: 1px solid #ddd;
+
+.<if(isNested)>nested-row<else>flex-row<endif> {
+  border-bottom: 1px solid #ddd;
+}
+
+.<if(isNested)>nested-cell<else>flex-cell<endif> {
+  border-right: 1px solid #ddd;
+}
+
+.<if(isNested)>nested-row<else>flex-row<endif>:last-child {
+  border-bottom: none;
+}
+
+.<if(isNested)>nested-row<else>flex-row<endif> .<if(isNested)>nested-cell<else>flex-cell<endif>:last-child {
+  border-right: none;
+}
 >>
 
-borderFrame() ::= <<
+borderFrame(isNested) ::= <<
 border: 1px solid #ddd;
+
+.<if(isNested)>nested-row<else>flex-row<endif> {
+  border-bottom: none;
+}
+
+.<if(isNested)>nested-cell<else>flex-cell<endif> {
+  border-right: none;
+}
 >>
 
-borderNone() ::= <<
+borderNone(isNested) ::= <<
 border: none;
+
+.<if(isNested)>nested-row<else>flex-row<endif> {
+  border: none;
+}
+
+.<if(isNested)>nested-cell<else>flex-cell<endif> {
+  border: none;
+}
 >>
 
 alignLeft() ::= <<
