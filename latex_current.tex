@@ -3,23 +3,71 @@
 \begin{table}[ht]
 \centering
 \caption{}
-\begin{tabular} {|c|c|}
+\begin{tabular} {|ccc|}
 \hline
-Main & Nested \\
+Product & Details & Suppliers \\
+Laptop & \begin{tabular} {@{}|cc|@{}}
 \hline
-Data 1 & \begin{tabular} {@{}r@{}}
-Inner \\
+Spec & Value \\
 
-Nested 1 \\
-\begin{tabular} {@{}l@{}}
-Inner \\
+CPU & i7-11800H \\
+RAM & 16GB \\
+Storage & \begin{tabular} {@{}|cc|@{}}
+\hline
+Type & Size \\
 
-Nested 1 \\
-Nested 2
+SSD & 512GB \\
+HDD & 1TB \\
+\hline
+\end{tabular} \\
+\hline
+\end{tabular} & \begin{tabular} {@{}|c|@{}}
+\hline
+Vendor \\
+
+TechCorp \\
+ElectroWorld \\
+\hline
+\end{tabular} \\
+Smartphone & \begin{tabular} {@{}|cc|@{}}
+\hline
+Feature & Value \\
+
+Screen & 6.5 AMOLED \\
+Camera & \begin{tabular} {@{}|cc|@{}}
+\hline
+Lens & MP \\
+
+Main & 48 \\
+Ultrawide & 12 \\
+Macro & 5 \\
+\hline
+\end{tabular} \\
+\hline
+\end{tabular} & \begin{tabular} {@{}|cc|@{}}
+\hline
+Region & Sellers \\
+
+Europe & \begin{tabular} {@{}|c|@{}}
+\hline
+Company \\
+
+MobileEU \\
+PhoneShop \\
+\hline
+\end{tabular} \\
+Asia & \begin{tabular} {@{}|c|@{}}
+\hline
+Company \\
+
+AsiaTech \\
+DigitalEast \\
+\hline
+\end{tabular} \\
+\hline
+\end{tabular} \\
+\hline
 \end{tabular}
-\end{tabular} \\ \hline
-Data 2 & Simple \\ \hline
-\end{tabular}
-\label{tab:parentTable}
+\label{tab:complexNested}
 \end{table}
 \end{document}

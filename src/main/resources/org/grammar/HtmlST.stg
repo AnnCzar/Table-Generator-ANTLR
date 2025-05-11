@@ -33,6 +33,18 @@ table(tableName, columns, align, border, header, rows, tableBorderStyle, cellBor
     <align>
     <endif>
   }
+
+  .table-<tableName> th,
+  .table-<tableName> td {
+    <if(cellBorderStyle)>
+    <cellBorderStyle>
+    <endif>
+    padding: 8px;
+    <if(align)>
+    <align>
+    <endif>
+  }
+
   .table-<tableName> > thead > tr > th,
   .table-<tableName> > tbody > tr > td {
     <if(cellBorderStyle)>
@@ -42,6 +54,7 @@ table(tableName, columns, align, border, header, rows, tableBorderStyle, cellBor
   .table-<tableName> thead {
     background-color: #ffffff;
   }
+
 \</style\>
 >>
 
@@ -93,6 +106,7 @@ cell(content) ::= <<
 \<td\><content>\</td\>
 >>
 borderGridTable() ::= <<
+border: 1px solid #ddd;
 border-collapse: collapse;
 >>
 

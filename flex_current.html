@@ -1,129 +1,53 @@
-<div class="table-container table-parentTable">
-  <div class="table-caption">Table: parentTable</div>
+<div class="table-container table-table1">
+  <div class="table-caption">Table: table1</div>
   <div class="table-header">
         <div class="flex-row">
-          <div class="flex-cell">Main</div><div class="flex-cell">Nested</div>
+          <div class="flex-cell">Single Column</div>
         </div>
       </div>
   <div class="table-body">
     <div class="flex-row">
-      <div class="flex-cell">Data 1</div>
-      <div class="flex-cell"><div class="nested-table nested-table-nested">
-        <div class="table-header">
-                <div class="flex-row">
-                  <div class="flex-cell">Inner</div>
-                </div>
-              </div>
-        <div class="table-body">
-          <div class="flex-row">
-            <div class="flex-cell">Nested 1</div>
-          </div>
-          <div class="flex-row">
-            <div class="flex-cell"><div class="nested-table nested-table-nestedd">
-              <div class="table-header">
-                      <div class="flex-row">
-                        <div class="flex-cell">Inner</div>
-                      </div>
-                    </div>
-              <div class="table-body">
-                <div class="flex-row">
-                  <div class="flex-cell">Nested 1</div>
-                </div>
-                <div class="flex-row">
-                  <div class="flex-cell">Nested 2</div>
-                </div>
-              </div>
-            </div>
-
-            <style>
-              .nested-table.nested-table-nestedd {
-                display: flex;
-                flex-direction: column;
-                width: 100%;
-                border: none !important;
-              }
-
-              .nested-table.nested-table-nestedd .flex-row {
-                display: flex;
-                flex-direction: row;
-                justify-content: flex-start;
-                text-align: left; !important;
-              }
-
-
-              .nested-table.nested-table-nestedd > .table-header > .flex-row > .flex-cell,
-              .nested-table.nested-table-nestedd > .table-body > .flex-row > .flex-cell {
-                flex: 1;
-                padding: 4px;
-                border: none !important;
-              }
-            </style></div>
-          </div>
-        </div>
-      </div>
-
-      <style>
-        .nested-table.nested-table-nested {
-          display: flex;
-          flex-direction: column;
-          width: 100%;
-          border: none !important;
-        }
-
-        .nested-table.nested-table-nested .flex-row {
-          display: flex;
-          flex-direction: row;
-          justify-content: flex-end;
-          text-align: right; !important;
-        }
-
-
-        .nested-table.nested-table-nested > .table-header > .flex-row > .flex-cell,
-        .nested-table.nested-table-nested > .table-body > .flex-row > .flex-cell {
-          flex: 1;
-          padding: 4px;
-          border: none !important;
-        }
-      </style></div>
+      <div class="flex-cell">Row 1</div>
     </div>
     <div class="flex-row">
-      <div class="flex-cell">Data 2</div>
-      <div class="flex-cell">Simple</div>
+      <div class="flex-cell">Row 2</div>
     </div>
   </div>
 </div>
 
 <style>
-  .table-parentTable {
+  .table-table1 {
     display: flex;
     flex-direction: column;
     width: 100%;
     margin-bottom: 20px;
+    border: 1px solid #ddd;
     border-collapse: collapse;
   }
 
-  .table-parentTable .table-caption {
+  .table-table1 .table-caption {
     font-weight: bold;
     text-align: center;
     margin-bottom: 10px;
   }
 
 
-  .table-parentTable .table-header {
+  .table-table1 .table-header {
     background-color: #ffffff;
+    border-bottom: 1px solid #ddd;
   }
 
-  .table-parentTable .flex-row {
+
+  .table-table1 .flex-row {
     display: flex;
     flex-direction: row;
     justify-content: center;
     text-align: center;
   }
 
-  .table-parentTable > .table-header > .flex-row > .flex-cell,
-  .table-parentTable > .table-body > .flex-row > .flex-cell {
+  .table-table1 > .table-header > .flex-row > .flex-cell,
+  .table-table1 > .table-body > .flex-row > .flex-cell {
     flex: 1;
     padding: 8px;
-    border: 1px solid #ddd;
   }
 </style>
