@@ -139,3 +139,11 @@ alignCenter() ::= <<
 justify-content: center;
 text-align: center;
 >>
+
+bold(text) ::= <<
+\<strong\><text>\</strong\>
+>>
+
+italic(text) ::= <<
+\<em\><text>\</em\>
+>>

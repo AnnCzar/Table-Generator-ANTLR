@@ -31,6 +31,26 @@ tableIN(tableName, columns, align, border, header, rows, borderD, addHlineAfterH
 \\end{tabular}
 >>
 
+bold(text) ::= <<
+\\textbf{<text>}
+>>
+
+italic(text) ::= <<
+\\textit{<text>}
+>>
+
+endline(left) ::= <<
+<left> \\\\ \\hline
+>>
+
+no-endline(left) ::= <<
+<left> \\\\
+>>
+
+two-cells(left, right) ::= <<
+<left> & <right>
+>>
+
 
 
 

@@ -138,3 +138,11 @@ text-align: right;
 alignCenter() ::= <<
 text-align: center;
 >>
+
+bold(text) ::= <<
+\<strong\><text>\</strong\>
+>>
+
+italic(text) ::= <<
+\<em\><text>\</em\>
+>>

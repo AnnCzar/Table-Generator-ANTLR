@@ -46,31 +46,9 @@ public class TableHtmlFlexVisitor extends TableGrammarParserBaseVisitor<String> 
                 : "grid";
         this.currentBorderStyle = borderStyleStr;
 
-//        tableHtml.add("borderStyle", getBorderStyleCSS(borderStyleStr));
-//        switch (borderStyleStr.toLowerCase()) {
-//            case "grid":
-//                tableHtml.add("tableBorderStyle", stGroup.getInstanceOf("borderGridTable").render());
-//                tableHtml.add("cellBorderStyle", stGroup.getInstanceOf("borderGridCell").render());
-//                break;
-//            case "frame":
-//                tableHtml.add("tableBorderStyle", stGroup.getInstanceOf("borderFrameTable").render());
-//                tableHtml.add("cellBorderStyle", stGroup.getInstanceOf("borderFrameCell").render());
-//                break;
-//            case "none":
-//                tableHtml.add("tableBorderStyle", stGroup.getInstanceOf("borderNoneTable").render());
-//                tableHtml.add("cellBorderStyle", stGroup.getInstanceOf("borderNoneCell").render());
-//                break;
-//            default:
-//                tableHtml.add("tableBorderStyle", stGroup.getInstanceOf("borderGridTable").render());
-//                tableHtml.add("cellBorderStyle", stGroup.getInstanceOf("borderGridCell").render());
-//        }
         if (isNested) {
             // Dla zagnieżdżonych tabel używamy bardziej specyficznych selektorów
             switch (borderStyleStr.toLowerCase()) {
-                case "grid":
-                    tableHtml.add("tableBorderStyle", "border-collapse: collapse");
-                    tableHtml.add("cellBorderStyle", "border: 1px solid #ddd");
-                    break;
                 case "frame":
                     tableHtml.add("tableBorderStyle", "border: 1px solid #ddd; border-collapse: collapse");
                     tableHtml.add("cellBorderStyle", "border: none");
@@ -86,10 +64,6 @@ public class TableHtmlFlexVisitor extends TableGrammarParserBaseVisitor<String> 
         } else {
             // Dla głównych tabel
             switch (borderStyleStr.toLowerCase()) {
-                case "grid":
-                    tableHtml.add("tableBorderStyle", stGroup.getInstanceOf("borderGridTable").render());
-                    tableHtml.add("cellBorderStyle", stGroup.getInstanceOf("borderGridCell").render());
-                    break;
                 case "frame":
                     tableHtml.add("tableBorderStyle", stGroup.getInstanceOf("borderFrameTable").render());
                     tableHtml.add("cellBorderStyle", stGroup.getInstanceOf("borderFrameCell").render());
@@ -111,29 +85,19 @@ public class TableHtmlFlexVisitor extends TableGrammarParserBaseVisitor<String> 
     }
 
     private String getBorderStyleCSS(String borderStyle) {
-        switch (borderStyle.toLowerCase()) {
-            case "grid":
-                return stGroup.getInstanceOf("borderGrid").render();
-            case "frame":
-                return stGroup.getInstanceOf("borderFrame").render();
-            case "none":
-                return stGroup.getInstanceOf("borderNone").render();
-            default:
-                return stGroup.getInstanceOf("borderGrid").render();
-        }
+        return switch (borderStyle.toLowerCase()) {
+            case "frame" -> stGroup.getInstanceOf("borderFrame").render();
+            case "none" -> stGroup.getInstanceOf("borderNone").render();
+            default -> stGroup.getInstanceOf("borderGrid").render();
+        };
     }
 
     private String getAlignStyle(String align) {
-        switch (align.toLowerCase()) {
-            case "left":
-                return stGroup.getInstanceOf("alignLeft").render();
-            case "right":
-                return stGroup.getInstanceOf("alignRight").render();
-            case "center":
-                return stGroup.getInstanceOf("alignCenter").render();
-            default:
-                return stGroup.getInstanceOf("alignCenter").render();
-        }
+        return switch (align.toLowerCase()) {
+            case "left" -> stGroup.getInstanceOf("alignLeft").render();
+            case "right" -> stGroup.getInstanceOf("alignRight").render();
+            default -> stGroup.getInstanceOf("alignCenter").render();
+        };
     }
 
     @Override
@@ -163,8 +127,7 @@ public class TableHtmlFlexVisitor extends TableGrammarParserBaseVisitor<String> 
             return "center"; // Domyślne wyrównanie
         }
 
-        String alignText = ctx.getChild(2).getText().toLowerCase();
-        return alignText;
+        return ctx.getChild(2).getText().toLowerCase();
     }
 
     @Override
@@ -260,10 +223,15 @@ public class TableHtmlFlexVisitor extends TableGrammarParserBaseVisitor<String> 
         String text = ctx.TEXT().getText().replaceAll("^\"|\"$", "");
 
         if (ctx.ITALIC() != null) {
-            text = "<em>" + text + "</em>";
+            ST italic = stGroup.getInstanceOf("italic");
+            italic.add("text", text);
+            text = italic.render();
         }
+
         if (ctx.BOLD() != null) {
-            text = "<strong>" + text + "</strong>";
+            ST bold = stGroup.getInstanceOf("bold");
+            bold.add("text", text);
+            text = bold.render();
         }
 
         return text;

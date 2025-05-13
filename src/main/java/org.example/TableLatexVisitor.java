@@ -48,38 +48,25 @@ public class TableLatexVisitor extends TableGrammarParserBaseVisitor<String> {
         tableLatex.add("border", border(ctx.inside().borderStyle() != null ? visit(ctx.inside().borderStyle()) : "grid", align , visit(ctx.inside().column())));
         tableLatex.add("header", visitHeadRow(ctx.inside().head().headRow(), borderStyleStr));
         tableLatex.add("rows", visitRows(ctx.inside().rows(), borderStyleStr));
-//        tableLatex.add("header", visit(ctx.inside().head()));
-//        tableLatex.add("rows", visit(ctx.inside().rows()));
 
         tableLatex.add("borderD", chcekBorder(borderStyleStr));
-//        tableLatex.add("borderD", chcekBorder(visitBorderStyle(ctx.inside().borderStyle() != null ? ctx.inside().borderStyle() : "grid")));
 
         return tableLatex.render();
     }
 
     private Boolean chcekBorder(String s) {
-        if (s.equalsIgnoreCase("none")) {
-            return false;
-        }
-        else{
-            return true;
-        }
+        return !s.equalsIgnoreCase("none");
     }
 
 
-        private String border(String border, String align, String columns) {
-            int cols = Integer.parseInt(columns);
-            switch (border) {
-                case "grid":
-                    return "|" + String.join("|", Collections.nCopies(cols, align)) + "|";
-                case "frame":
-                    return "|" + String.join("", Collections.nCopies(cols, align)) + "|";
-                case "none":
-                    return String.join("", Collections.nCopies(cols, align));
-                default:
-                    return String.join("", Collections.nCopies(cols, align)) ;
-            }
-        }
+    private String border(String border, String align, String columns) {
+        int cols = Integer.parseInt(columns);
+        return switch (border) {
+            case "grid" -> "|" + String.join("|", Collections.nCopies(cols, align)) + "|";
+            case "frame" -> "|" + String.join("", Collections.nCopies(cols, align)) + "|";
+            default -> String.join("", Collections.nCopies(cols, align));
+        };
+    }
 
     @Override
     public String visitColumn(TableGrammarParser.ColumnContext ctx) {
@@ -111,12 +98,12 @@ public class TableLatexVisitor extends TableGrammarParserBaseVisitor<String> {
         }
 
         String alignText = ctx.getChild(2).getText().toLowerCase(); // Pobieramy wartość align i konwertujemy na małe litery
-        switch (alignText) {
-            case "center": return "c";
-            case "left": return "l";
-            case "right": return "r";
-            default: throw new IllegalArgumentException("Unknown align type: " + alignText);
-        }
+        return switch (alignText) {
+            case "center" -> "c";
+            case "left" -> "l";
+            case "right" -> "r";
+            default -> throw new IllegalArgumentException("Unknown align type: " + alignText);
+        };
     }
 
     @Override
@@ -130,17 +117,20 @@ public class TableLatexVisitor extends TableGrammarParserBaseVisitor<String> {
 
         if (ctx.headRow() != null) {
             String right = visitHeadRow(ctx.headRow());
-            return left + " & " + right;
+            ST two_cells = stGroup.getInstanceOf("two-cells");
+            two_cells.add("left", left).add("right", right);
+            return two_cells.render();
         }
         switch (borderStyle){
-            case "grid":
-                return left + " \\\\ \\hline";
             case "frame":
-                return left + " \\\\";
             case "none":
-                return left + " \\\\";
+                ST no_endline = stGroup.getInstanceOf("no-endline");
+                no_endline.add("left", left);
+                return no_endline.render();
             default:
-                return left + "\\\\ \\hline";
+                ST endline = stGroup.getInstanceOf("endline");
+                endline.add("left", left);
+                return endline.render();
         }
     }
 
@@ -151,17 +141,20 @@ public class TableLatexVisitor extends TableGrammarParserBaseVisitor<String> {
 
         if(ctx.row() != null) {
             String right = visitRow(ctx.row());
-            return left + " & " + right;
+            ST two_cells = stGroup.getInstanceOf("two-cells");
+            two_cells.add("left", left).add("right", right);
+            return two_cells.render();
         }
         switch (borderStyle){
-            case "grid":
-                return left + " \\\\ \\hline";
             case "frame":
-                return left + " \\\\";
             case "none":
-                return left + " \\\\";
+                ST no_endline = stGroup.getInstanceOf("no-endline");
+                no_endline.add("left", left);
+                return no_endline.render();
             default:
-                return left + " \\\\ \\hline";
+                ST endline = stGroup.getInstanceOf("endline");
+                endline.add("left", left);
+                return endline.render();
         }
     }
 
@@ -210,14 +203,21 @@ public class TableLatexVisitor extends TableGrammarParserBaseVisitor<String> {
 
         if (ctx.row() != null) {
             String right = visitRow(ctx.row(), borderStyle);
-            return left + " & " + right;
+            ST two_cells = stGroup.getInstanceOf("two-cells");
+            two_cells.add("left", left).add("right", right);
+            return two_cells.render();
         }
 
-        switch (borderStyle) {
-            case "grid": return left + " \\\\ \\hline";
-            case "frame": return left + " \\\\";
-            case "none": return left + " \\\\";
-            default: return left + " \\\\ \\hline";
+        switch (borderStyle){
+            case "frame":
+            case "none":
+                ST no_endline = stGroup.getInstanceOf("no-endline");
+                no_endline.add("left", left);
+                return no_endline.render();
+            default:
+                ST endline = stGroup.getInstanceOf("endline");
+                endline.add("left", left);
+                return endline.render();
         }
     }
 
@@ -228,14 +228,9 @@ public class TableLatexVisitor extends TableGrammarParserBaseVisitor<String> {
             String right = visitHeadRow(ctx.headRow(), borderStyle);
             return left + " & " + right;
         }
-
-//        switch (borderStyle) {
-//            case "grid": return left + " \\\\ \\hline";
-//            case "frame": return left + " \\\\";
-//            case "none": return left + " \\\\";
-//            default: return left + " \\\\ \\hline";
-//        }
-        return left + " \\\\";
+        ST no_endline = stGroup.getInstanceOf("no-endline");
+        no_endline.add("left", left);
+        return no_endline.render();
 
     }
 
@@ -262,10 +257,14 @@ public String visitContent(TableGrammarParser.ContentContext ctx) {
 
         String text = ctx.TEXT().getText().replaceAll("^\"|\"$", "");
         if ( ctx.ITALIC() != null ) {
-            text = "\\textit{" + text + "}";
+            ST italic = stGroup.getInstanceOf("italic");
+            italic.add("text", text);
+            text = italic.render();
         }
         if ( ctx.BOLD() != null ) {
-            text = "\\textbf{" + text + "}";
+            ST bold = stGroup.getInstanceOf("bold");
+            bold.add("text", text);
+            text = bold.render();
         }
         return text;
     }
