@@ -1,0 +1,57 @@
+table(tableName, columns, align, border, caption, header, rows, borderD, addHlineAfterHeader) ::= <<
+\\begin{table}[ht]
+\\centering
+\\caption{<caption>}
+\\begin{tabular} {<border>}
+<if(borderD)>
+\\hline
+<endif>
+<header>
+<if(addHlineAfterHeader)>
+\\hline
+<endif>
+<rows>
+\\end{tabular}
+\\label{tab:<tableName>}
+\\end{table}
+>>
+
+
+tableIN(tableName, columns, align, border, header, rows, borderD, addHlineAfterHeader) ::= <<
+\\begin{tabular} {@{}<border>@{}}
+<if(borderD)>
+\\hline
+<endif>
+<header>
+
+<if(addHlineAfterHeader)>
+\\hline
+<endif>
+<rows>
+\\end{tabular}
+>>
+
+bold(text) ::= <<
+\\textbf{<text>}
+>>
+
+italic(text) ::= <<
+\\textit{<text>}
+>>
+
+endline(left) ::= <<
+<left> \\\\ \\hline
+>>
+
+no-endline(left) ::= <<
+<left> \\\\
+>>
+
+two-cells(left, right) ::= <<
+<left> & <right>
+>>
+
+
+
+
+

@@ -1,0 +1,825 @@
+\begin{table}[ht]
+\centering
+\caption{}
+\begin{tabular} {|ccc|}
+\hline
+Product & Details & Suppliers \\
+Laptop & \begin{tabular} {@{}|cc|@{}}
+\hline
+Spec & Value \\
+
+CPU & i7-11800H \\
+RAM & 16GB \\
+Storage & \begin{tabular} {@{}|cc|@{}}
+\hline
+Type & Size \\
+
+SSD & 512GB \\
+HDD & 1TB \\
+\hline
+\end{tabular} \\
+\hline
+\end{tabular} & \begin{tabular} {@{}|c|@{}}
+\hline
+Vendor \\
+
+TechCorp \\
+ElectroWorld \\
+\hline
+\end{tabular} \\
+Smartphone & \begin{tabular} {@{}|cc|@{}}
+\hline
+Feature & Value \\
+
+Screen & 6.5 AMOLED \\
+Camera & \begin{tabular} {@{}|cc|@{}}
+\hline
+Lens & MP \\
+
+Main & 48 \\
+Ultrawide & 12 \\
+Macro & 5 \\
+\hline
+\end{tabular} \\
+\hline
+\end{tabular} & \begin{tabular} {@{}|cc|@{}}
+\hline
+Region & Sellers \\
+
+Europe & \begin{tabular} {@{}|c|@{}}
+\hline
+Company \\
+
+MobileEU \\
+PhoneShop \\
+\hline
+\end{tabular} \\
+Asia & \begin{tabular} {@{}|c|@{}}
+\hline
+Company \\
+
+AsiaTech \\
+DigitalEast \\
+\hline
+\end{tabular} \\
+\hline
+\end{tabular} \\
+\hline
+\end{tabular}
+\label{tab:complexNested}
+\end{table}\begin{table}[ht]
+\centering
+\caption{}
+\begin{tabular} {|ccc|}
+\hline
+Product & Details & Suppliers \\
+Laptop & \begin{tabular} {@{}|cc|@{}}
+\hline
+Spec & Value \\
+
+CPU & i7-11800H \\
+RAM & 16GB \\
+Storage & \begin{tabular} {@{}|cc|@{}}
+\hline
+Type & Size \\
+
+SSD & 512GB \\
+HDD & 1TB \\
+\hline
+\end{tabular} \\
+\hline
+\end{tabular} & \begin{tabular} {@{}|c|@{}}
+\hline
+Vendor \\
+
+TechCorp \\
+ElectroWorld \\
+\hline
+\end{tabular} \\
+Smartphone & \begin{tabular} {@{}|cc|@{}}
+\hline
+Feature & Value \\
+
+Screen & 6.5 AMOLED \\
+Camera & \begin{tabular} {@{}|cc|@{}}
+\hline
+Lens & MP \\
+
+Main & 48 \\
+Ultrawide & 12 \\
+Macro & 5 \\
+\hline
+\end{tabular} \\
+\hline
+\end{tabular} & \begin{tabular} {@{}|cc|@{}}
+\hline
+Region & Sellers \\
+
+Europe & \begin{tabular} {@{}|c|@{}}
+\hline
+Company \\
+
+MobileEU \\
+PhoneShop \\
+\hline
+\end{tabular} \\
+Asia & \begin{tabular} {@{}|c|@{}}
+\hline
+Company \\
+
+AsiaTech \\
+DigitalEast \\
+\hline
+\end{tabular} \\
+\hline
+\end{tabular} \\
+\hline
+\end{tabular}
+\label{tab:complexNested}
+\end{table}\begin{table}[ht]
+\centering
+\caption{}
+\begin{tabular} {|ccc|}
+\hline
+Product & Details & Suppliers \\
+Laptop & \begin{tabular} {@{}|cc|@{}}
+\hline
+Spec & Value \\
+
+CPU & i7-11800H \\
+RAM & 16GB \\
+Storage & \begin{tabular} {@{}|cc|@{}}
+\hline
+Type & Size \\
+
+SSD & 512GB \\
+HDD & 1TB \\
+\hline
+\end{tabular} \\
+\hline
+\end{tabular} & \begin{tabular} {@{}|c|@{}}
+\hline
+Vendor \\
+
+TechCorp \\
+ElectroWorld \\
+\hline
+\end{tabular} \\
+Smartphone & \begin{tabular} {@{}|cc|@{}}
+\hline
+Feature & Value \\
+
+Screen & 6.5 AMOLED \\
+Camera & \begin{tabular} {@{}|cc|@{}}
+\hline
+Lens & MP \\
+
+Main & 48 \\
+Ultrawide & 12 \\
+Macro & 5 \\
+\hline
+\end{tabular} \\
+\hline
+\end{tabular} & \begin{tabular} {@{}|cc|@{}}
+\hline
+Region & Sellers \\
+
+Europe & \begin{tabular} {@{}|c|@{}}
+\hline
+Company \\
+
+MobileEU \\
+PhoneShop \\
+\hline
+\end{tabular} \\
+Asia & \begin{tabular} {@{}|c|@{}}
+\hline
+Company \\
+
+AsiaTech \\
+DigitalEast \\
+\hline
+\end{tabular} \\
+\hline
+\end{tabular} \\
+\hline
+\end{tabular}
+\label{tab:complexNested}
+\end{table}\begin{table}[ht]
+\centering
+\caption{}
+\begin{tabular} {|l|l|}
+\hline
+Name & Age \\
+\hline
+Alice & 30 \\ \hline
+Bob & 25 \\ \hline
+\end{tabular}
+\label{tab:t1}
+\end{table}\begin{table}[ht]
+\centering
+\caption{}
+\begin{tabular} {|ccc|}
+\hline
+ID & Product & Price \\
+001 & Laptop & 1200 \\
+002 & Phone & 800 \\
+\hline
+\end{tabular}
+\label{tab:t2}
+\end{table}\begin{table}[ht]
+\centering
+\caption{}
+\begin{tabular} {rr}
+\textbf{Title} & \textit{Author} \\
+\textit{Book A} & \textbf{Writer A} \\
+Book B & Writer B
+\end{tabular}
+\label{tab:t3}
+\end{table}\begin{table}[ht]
+\centering
+\caption{}
+\begin{tabular} {|c|c|c|}
+\hline
+A & B & C \\
+\hline
+1 & 2 & 3 \\ \hline
+4 & 5 & 6 \\ \hline
+\end{tabular}
+\label{tab:t7}
+\end{table}\begin{table}[ht]
+\centering
+\caption{}
+\begin{tabular} {|l|l|l|}
+\hline
+Name & Age & City \\
+\hline
+John & 25 & New York \\ \hline
+Alice & 30 & London \\ \hline
+Bob & 35 & Paris \\ \hline
+\end{tabular}
+\label{tab:myTable}
+\end{table}\begin{table}[ht]
+\centering
+\caption{}
+\begin{tabular} {|c|c|}
+\hline
+\textbf{Title} & \textit{Author} \\
+\hline
+\textbf{Book 1} & Author A \\ \hline
+\textit{Book 2} & \textbf{Author B} \\ \hline
+\end{tabular}
+\label{tab:table1}
+\end{table}\begin{table}[ht]
+\centering
+\caption{}
+\begin{tabular} {|c|}
+\hline
+Single Column \\
+Row 1 \\
+Row 2 \\
+\hline
+\end{tabular}
+\label{tab:table1}
+\end{table}\begin{table}[ht]
+\centering
+\caption{}
+\begin{tabular} {cc}
+ID & Value \\
+1 & A \\
+2 & B
+\end{tabular}
+\label{tab:noBorderTable}
+\end{table}\begin{table}[ht]
+\centering
+\caption{}
+\begin{tabular} {|lll|}
+\hline
+Name & Age & City \\
+John & 25 & New York \\
+Alice & 30 & London \\
+Bob & 35 & Paris \\
+\hline
+\end{tabular}
+\label{tab:myTable}
+\end{table}\begin{table}[ht]
+\centering
+\caption{}
+\begin{tabular} {|ccc|}
+\hline
+Product & Details & Suppliers \\
+Laptop & \begin{tabular} {@{}|cc|@{}}
+\hline
+Spec & Value \\
+
+CPU & i7-11800H \\
+RAM & 16GB \\
+Storage & \begin{tabular} {@{}|cc|@{}}
+\hline
+Type & Size \\
+
+SSD & 512GB \\
+HDD & 1TB \\
+\hline
+\end{tabular} \\
+\hline
+\end{tabular} & \begin{tabular} {@{}|c|@{}}
+\hline
+Vendor \\
+
+TechCorp \\
+ElectroWorld \\
+\hline
+\end{tabular} \\
+Smartphone & \begin{tabular} {@{}|cc|@{}}
+\hline
+Feature & Value \\
+
+Screen & 6.5 AMOLED \\
+Camera & \begin{tabular} {@{}|cc|@{}}
+\hline
+Lens & MP \\
+
+Main & 48 \\
+Ultrawide & 12 \\
+Macro & 5 \\
+\hline
+\end{tabular} \\
+\hline
+\end{tabular} & \begin{tabular} {@{}|cc|@{}}
+\hline
+Region & Sellers \\
+
+Europe & \begin{tabular} {@{}|c|@{}}
+\hline
+Company \\
+
+MobileEU \\
+PhoneShop \\
+\hline
+\end{tabular} \\
+Asia & \begin{tabular} {@{}|c|@{}}
+\hline
+Company \\
+
+AsiaTech \\
+DigitalEast \\
+\hline
+\end{tabular} \\
+\hline
+\end{tabular} \\
+\hline
+\end{tabular}
+\label{tab:complexNested}
+\end{table}\begin{table}[ht]
+\centering
+\caption{}
+\begin{tabular} {ccc}
+Product & Details & Suppliers \\
+Laptop & \begin{tabular} {@{}|cc|@{}}
+\hline
+Spec & Value \\
+
+CPU & i7-11800H \\
+RAM & 16GB \\
+Storage & \begin{tabular} {@{}|cc|@{}}
+\hline
+Type & Size \\
+
+SSD & 512GB \\
+HDD & 1TB \\
+\hline
+\end{tabular} \\
+\hline
+\end{tabular} & \begin{tabular} {@{}|c|@{}}
+\hline
+Vendor \\
+
+TechCorp \\
+ElectroWorld \\
+\hline
+\end{tabular} \\
+Smartphone & \begin{tabular} {@{}|cc|@{}}
+\hline
+Feature & Value \\
+
+Screen & 6.5 AMOLED \\
+Camera & \begin{tabular} {@{}|cc|@{}}
+\hline
+Lens & MP \\
+
+Main & 48 \\
+Ultrawide & 12 \\
+Macro & 5 \\
+\hline
+\end{tabular} \\
+\hline
+\end{tabular} & \begin{tabular} {@{}|cc|@{}}
+\hline
+Region & Sellers \\
+
+Europe & \begin{tabular} {@{}|c|@{}}
+\hline
+Company \\
+
+MobileEU \\
+PhoneShop \\
+\hline
+\end{tabular} \\
+Asia & \begin{tabular} {@{}|c|@{}}
+\hline
+Company \\
+
+AsiaTech \\
+DigitalEast \\
+\hline
+\end{tabular} \\
+\hline
+\end{tabular}
+\end{tabular}
+\label{tab:complexNested}
+\end{table}\begin{table}[ht]
+\centering
+\caption{}
+\begin{tabular} {ccc}
+Product & Details & Suppliers \\
+Laptop & \begin{tabular} {@{}|cc|@{}}
+\hline
+Spec & Value \\
+
+CPU & i7-11800H \\
+RAM & 16GB \\
+Storage & \begin{tabular} {@{}|cc|@{}}
+\hline
+Type & Size \\
+
+SSD & 512GB \\
+HDD & 1TB \\
+\hline
+\end{tabular} \\
+\hline
+\end{tabular} & \begin{tabular} {@{}|c|@{}}
+\hline
+Vendor \\
+
+TechCorp \\
+ElectroWorld \\
+\hline
+\end{tabular} \\
+Smartphone & \begin{tabular} {@{}|cc|@{}}
+\hline
+Feature & Value \\
+
+Screen & 6.5 AMOLED \\
+Camera & \begin{tabular} {@{}|cc|@{}}
+\hline
+Lens & MP \\
+
+Main & 48 \\
+Ultrawide & 12 \\
+Macro & 5 \\
+\hline
+\end{tabular} \\
+\hline
+\end{tabular} & \begin{tabular} {@{}|cc|@{}}
+\hline
+Region & Sellers \\
+
+Europe & \begin{tabular} {@{}|c|@{}}
+\hline
+Company \\
+
+MobileEU \\
+PhoneShop \\
+\hline
+\end{tabular} \\
+Asia & \begin{tabular} {@{}|c|@{}}
+\hline
+Company \\
+
+AsiaTech \\
+DigitalEast \\
+\hline
+\end{tabular} \\
+\hline
+\end{tabular}
+\end{tabular}
+\label{tab:complexNested}
+\end{table}\begin{table}[ht]
+\centering
+\caption{}
+\begin{tabular} {|ccc|}
+\hline
+Product & Details & Suppliers \\
+Laptop & \begin{tabular} {@{}|cc|@{}}
+\hline
+Spec & Value \\
+
+CPU & i7-11800H \\
+RAM & 16GB \\
+Storage & \begin{tabular} {@{}|cc|@{}}
+\hline
+Type & Size \\
+
+SSD & 512GB \\
+HDD & 1TB \\
+\hline
+\end{tabular} \\
+\hline
+\end{tabular} & \begin{tabular} {@{}|c|@{}}
+\hline
+Vendor \\
+
+TechCorp \\
+ElectroWorld \\
+\hline
+\end{tabular} \\
+Smartphone & \begin{tabular} {@{}|cc|@{}}
+\hline
+Feature & Value \\
+
+Screen & 6.5 AMOLED \\
+Camera & \begin{tabular} {@{}|cc|@{}}
+\hline
+Lens & MP \\
+
+Main & 48 \\
+Ultrawide & 12 \\
+Macro & 5 \\
+\hline
+\end{tabular} \\
+\hline
+\end{tabular} & \begin{tabular} {@{}|cc|@{}}
+\hline
+Region & Sellers \\
+
+Europe & \begin{tabular} {@{}|c|@{}}
+\hline
+Company \\
+
+MobileEU \\
+PhoneShop \\
+\hline
+\end{tabular} \\
+Asia & \begin{tabular} {@{}|c|@{}}
+\hline
+Company \\
+
+AsiaTech \\
+DigitalEast \\
+\hline
+\end{tabular} \\
+\hline
+\end{tabular} \\
+\hline
+\end{tabular}
+\label{tab:complexNested}
+\end{table}\begin{table}[ht]
+\centering
+\caption{}
+\begin{tabular} {|ccc|}
+\hline
+Product & Details & Suppliers \\
+Laptop & \begin{tabular} {@{}|c|c|@{}}
+\hline
+Spec & Value \\
+
+\hline
+CPU & i7-11800H \\ \hline
+RAM & 16GB \\ \hline
+Storage & \begin{tabular} {@{}|cc|@{}}
+\hline
+Type & Size \\
+
+SSD & 512GB \\
+HDD & 1TB \\
+\hline
+\end{tabular} \\ \hline
+\end{tabular} & \begin{tabular} {@{}|c|@{}}
+\hline
+Vendor \\
+
+TechCorp \\
+ElectroWorld \\
+\hline
+\end{tabular} \\
+Smartphone & \begin{tabular} {@{}|cc|@{}}
+\hline
+Feature & Value \\
+
+Screen & 6.5 AMOLED \\
+Camera & \begin{tabular} {@{}|cc|@{}}
+\hline
+Lens & MP \\
+
+Main & 48 \\
+Ultrawide & 12 \\
+Macro & 5 \\
+\hline
+\end{tabular} \\
+\hline
+\end{tabular} & \begin{tabular} {@{}|cc|@{}}
+\hline
+Region & Sellers \\
+
+Europe & \begin{tabular} {@{}|c|@{}}
+\hline
+Company \\
+
+MobileEU \\
+PhoneShop \\
+\hline
+\end{tabular} \\
+Asia & \begin{tabular} {@{}|c|@{}}
+\hline
+Company \\
+
+AsiaTech \\
+DigitalEast \\
+\hline
+\end{tabular} \\
+\hline
+\end{tabular} \\
+\hline
+\end{tabular}
+\label{tab:complexNested}
+\end{table}\begin{table}[ht]
+\centering
+\caption{}
+\begin{tabular} {|ccc|}
+\hline
+Product & Details & Suppliers \\
+Laptop & \begin{tabular} {@{}|c|c|@{}}
+\hline
+Spec & Value \\
+
+\hline
+CPU & i7-11800H \\ \hline
+RAM & 16GB \\ \hline
+Storage & \begin{tabular} {@{}|c|c|@{}}
+\hline
+Type & Size \\
+
+\hline
+SSD & 512GB \\ \hline
+HDD & 1TB \\ \hline
+\end{tabular} \\ \hline
+\end{tabular} & \begin{tabular} {@{}|c|@{}}
+\hline
+Vendor \\
+
+TechCorp \\
+ElectroWorld \\
+\hline
+\end{tabular} \\
+Smartphone & \begin{tabular} {@{}|cc|@{}}
+\hline
+Feature & Value \\
+
+Screen & 6.5 AMOLED \\
+Camera & \begin{tabular} {@{}|cc|@{}}
+\hline
+Lens & MP \\
+
+Main & 48 \\
+Ultrawide & 12 \\
+Macro & 5 \\
+\hline
+\end{tabular} \\
+\hline
+\end{tabular} & \begin{tabular} {@{}|cc|@{}}
+\hline
+Region & Sellers \\
+
+Europe & \begin{tabular} {@{}|c|@{}}
+\hline
+Company \\
+
+MobileEU \\
+PhoneShop \\
+\hline
+\end{tabular} \\
+Asia & \begin{tabular} {@{}|c|@{}}
+\hline
+Company \\
+
+AsiaTech \\
+DigitalEast \\
+\hline
+\end{tabular} \\
+\hline
+\end{tabular} \\
+\hline
+\end{tabular}
+\label{tab:complexNested}
+\end{table}\begin{table}[ht]
+\centering
+\caption{}
+\begin{tabular} {|c|c|}
+\hline
+Main & Nested \\
+\hline
+Data 1 & \begin{tabular} {@{}r@{}}
+Inner \\
+
+Nested 1 \\
+\begin{tabular} {@{}l@{}}
+Inner \\
+
+Nested 1 \\
+Nested 2
+\end{tabular}
+\end{tabular} \\ \hline
+Data 2 & Simple \\ \hline
+\end{tabular}
+\label{tab:parentTable}
+\end{table}\begin{table}[ht]
+\centering
+\caption{}
+\begin{tabular} {|c|c|}
+\hline
+\textbf{Title} & \textit{Author} \\
+\hline
+\textbf{Book 1} & Author A \\ \hline
+\textit{Book 2} & \textbf{Author B} \\ \hline
+\end{tabular}
+\label{tab:table1}
+\end{table}\begin{table}[ht]
+\centering
+\caption{}
+\begin{tabular} {|ccc|}
+\hline
+Product & Details & Suppliers \\
+Laptop & \begin{tabular} {@{}|cc|@{}}
+\hline
+Spec & Value \\
+
+CPU & i7-11800H \\
+RAM & 16GB \\
+Storage & \begin{tabular} {@{}|cc|@{}}
+\hline
+Type & Size \\
+
+SSD & 512GB \\
+HDD & 1TB \\
+\hline
+\end{tabular} \\
+\hline
+\end{tabular} & \begin{tabular} {@{}|c|@{}}
+\hline
+Vendor \\
+
+TechCorp \\
+ElectroWorld \\
+\hline
+\end{tabular} \\
+Smartphone & \begin{tabular} {@{}|cc|@{}}
+\hline
+Feature & Value \\
+
+Screen & 6.5 AMOLED \\
+Camera & \begin{tabular} {@{}|cc|@{}}
+\hline
+Lens & MP \\
+
+Main & 48 \\
+Ultrawide & 12 \\
+Macro & 5 \\
+\hline
+\end{tabular} \\
+\hline
+\end{tabular} & \begin{tabular} {@{}|cc|@{}}
+\hline
+Region & Sellers \\
+
+Europe & \begin{tabular} {@{}|c|@{}}
+\hline
+Company \\
+
+MobileEU \\
+PhoneShop \\
+\hline
+\end{tabular} \\
+Asia & \begin{tabular} {@{}|c|@{}}
+\hline
+Company \\
+
+AsiaTech \\
+DigitalEast \\
+\hline
+\end{tabular} \\
+\hline
+\end{tabular} \\
+\hline
+\end{tabular}
+\label{tab:complexNested}
+\end{table}\begin{table}[ht]
+\centering
+\caption{}
+\begin{tabular} {cc}
+ID & Value \\
+1 & A \\
+2 & B
+\end{tabular}
+\label{tab:noBorderTable}
+\end{table}

@@ -1,0 +1,142 @@
+table complexNested {
+    columns: 3
+    align: center
+    border: frame
+    header: {
+        "Product" | "Details" | "Suppliers"
+    }
+    rows: {
+        (
+            "Laptop" | table laptopDetails {
+                columns: 2
+                align: center
+                border: frame
+                header: {
+                    "Spec" | "Value"
+                }
+                rows: {
+                    (
+                        "CPU" | "i7-11800H"
+                    )
+                    (
+                        "RAM" | "16GB"
+                    )
+                    (
+                        "Storage" | table storageDetails {
+                            columns: 2
+                            align: center
+                            border: frame
+                            header: {
+                                "Type" | "Size"
+                            }
+                            rows: {
+                                (
+                                    "SSD" | "512GB"
+                                )
+                                (
+                                    "HDD" | "1TB"
+                                )
+                            }
+                        }
+                    )
+                }
+            } | table laptopSuppliers {
+                columns: 1
+                align: center
+                border: frame
+                header: {
+                    "Vendor"
+                }
+                rows: {
+                    (
+                        "TechCorp"
+                    )
+                    (
+                        "ElectroWorld"
+                    )
+                }
+            }
+        )
+        (
+            "Smartphone" | table smartphoneDetails {
+                columns: 2
+                align: center
+                border: frame
+                header: {
+                    "Feature" | "Value"
+                }
+                rows: {
+                    (
+                        "Screen" | "6.5 AMOLED"
+                    )
+                    (
+                        "Camera" | table cameraDetails {
+                            columns: 2
+                            align: center
+                            border: frame
+                            header: {
+                                "Lens" | "MP"
+                            }
+                            rows: {
+                                (
+                                    "Main" | "48"
+                                )
+                                (
+                                    "Ultrawide" | "12"
+                                )
+                                (
+                                    "Macro" | "5"
+                                )
+                            }
+                        }
+                    )
+                }
+            } | table smartphoneSuppliers {
+                columns: 2
+                align: center
+                border: frame
+                header: {
+                    "Region" | "Sellers"
+                }
+                rows: {
+                    (
+                        "Europe" | table europeSellers {
+                            columns: 1
+                            align: center
+                            border: frame
+                            header: {
+                                "Company"
+                            }
+                            rows: {
+                                (
+                                    "MobileEU"
+                                )
+                                (
+                                    "PhoneShop"
+                                )
+                            }
+                        }
+                    )
+                    (
+                        "Asia" | table asiaSellers {
+                            columns: 1
+                            align: center
+                            border: frame
+                            header: {
+                                "Company"
+                            }
+                            rows: {
+                                (
+                                    "AsiaTech"
+                                )
+                                (
+                                    "DigitalEast"
+                                )
+                            }
+                        }
+                    )
+                }
+            }
+        )
+    }
+}

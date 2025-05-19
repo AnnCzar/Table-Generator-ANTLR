@@ -1,0 +1,148 @@
+table(tableName, columns, align, border, header, rows, tableBorderStyle, cellBorderStyle) ::= <<
+\<table class="table-<tableName>"\>
+  \<caption\>Table: <tableName>\</caption\>
+  \<thead\>
+    \<tr\>
+      <header>
+    \</tr\>
+  \</thead\>
+  \<tbody\>
+    <rows>
+  \</tbody\>
+\</table\>
+
+\<style\>
+  .table-<tableName> {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 20px;
+    <if(tableBorderStyle)>
+    <tableBorderStyle>
+    <endif>
+  }
+
+  .table-<tableName> caption {
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 10px;
+  }
+  .table-<tableName> th,
+  .table-<tableName> td {
+    padding: 8px;
+    <if(align)>
+    <align>
+    <endif>
+  }
+
+  .table-<tableName> th,
+  .table-<tableName> td {
+    <if(cellBorderStyle)>
+    <cellBorderStyle>
+    <endif>
+    padding: 8px;
+    <if(align)>
+    <align>
+    <endif>
+  }
+
+  .table-<tableName> > thead > tr > th,
+  .table-<tableName> > tbody > tr > td {
+    <if(cellBorderStyle)>
+    <cellBorderStyle>
+    <endif>
+  }
+  .table-<tableName> thead {
+    background-color: #ffffff;
+  }
+
+\</style\>
+>>
+
+tableIN(tableName, columns, align, border, header, rows, tableBorderStyle, cellBorderStyle) ::= <<
+\<table class="nested-table nested-table-<tableName>"\>
+  \<thead\>
+    \<tr\>
+      <header>
+    \</tr\>
+  \</thead\>
+  \<tbody\>
+    <rows>
+  \</tbody\>
+\</table\>
+
+\<style\>
+ table.nested-table.nested-table-<tableName> {
+    width: 100%;
+    <if(tableBorderStyle)>
+    <tableBorderStyle> !important;
+    <endif>
+  }
+  table.nested-table.nested-table-<tableName> th,
+  table.nested-table.nested-table-<tableName> td {
+    padding: 4px;
+    <if(align)>
+    <align> !important;
+    <endif>
+  }
+ table.nested-table.nested-table-<tableName> > thead > tr > th,
+  table.nested-table.nested-table-<tableName> > tbody > tr > td {
+    <if(cellBorderStyle)>
+    <cellBorderStyle> !important;
+    <endif>
+  }
+
+  table.nested-table.nested-table-<tableName> thead {
+    background-color: #ffffff;
+  }
+\</style\>
+>>
+
+row(cells) ::= <<
+\<tr\>
+  <cells>
+\</tr\>
+>>
+cell(content) ::= <<
+\<td\><content>\</td\>
+>>
+borderGridTable() ::= <<
+border: 1px solid #ddd;
+border-collapse: collapse;
+>>
+
+borderGridCell() ::= <<
+border: 1px solid #ddd;
+>>
+
+borderFrameTable() ::= <<
+border: 1px solid #ddd;
+border-collapse: collapse;
+>>
+
+borderFrameCell() ::= <<
+>>
+
+borderNoneTable() ::= <<
+border: none;
+>>
+
+borderNoneCell() ::= <<
+border: none;
+>>
+alignLeft() ::= <<
+text-align: left;
+>>
+alignRight() ::= <<
+text-align: right;
+>>
+alignCenter() ::= <<
+text-align: center;
+>>
+
+bold(text) ::= <<
+\<strong\><text>\</strong\>
+>>
+
+italic(text) ::= <<
+\<em\><text>\</em\>
+>>

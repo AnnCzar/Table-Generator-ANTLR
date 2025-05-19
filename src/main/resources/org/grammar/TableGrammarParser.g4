@@ -5,7 +5,7 @@ program
     : table EOF
     ;
 
-table  // dodanie ew podpisów - do przemyślenia
+table
     : TABLE ID LCURLY inside RCURLY
     ;
 
@@ -48,6 +48,6 @@ content
     | table
     ;
 
-formattedText // opcjonalne formatowanie tkestu
+formattedText // opcjonalne formatowanie tekstu
     : (ITALIC | BOLD)? TEXT
     ;
