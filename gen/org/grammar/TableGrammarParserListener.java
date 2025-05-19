@@ -1,4 +1,4 @@
-// Generated from C:/Users/martu/Desktop/studia/magisterka/1_sem/MiASI_projekt/src/main/resources/org/grammar/TableGrammarParser.g4 by ANTLR 4.13.2
+// Generated from C:/Users/aczar/Desktop/polibuda/MiASI_projekt/TableGenerator/src/main/resources/org/grammar/TableGrammarParser.g4 by ANTLR 4.13.2
 package org.grammar;
 import org.antlr.v4.runtime.tree.ParseTreeListener;
 

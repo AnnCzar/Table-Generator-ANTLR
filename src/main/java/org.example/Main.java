@@ -69,7 +69,8 @@ public class Main {
         System.out.println(format);
 
         if (format.equals("LaTeX")) {
-            STGroup group = new STGroupFile("src/main/resources/org/grammar/LatexST.stg"); //otwieramy plik z .stg
+            STGroup group = new STGroupFile("org/grammar/LatexST.stg");
+ //otwieramy plik z .stg
             TableLatexVisitor visitor = new TableLatexVisitor(group);
             String latexCode = visitor.visit(tree);
             setOutput(latexCode);
@@ -94,7 +95,7 @@ public class Main {
 
 
         } else if (format.equals("CSS Flexbox")) {
-            STGroup group = new STGroupFile("src/main/resources/org/grammar/HTMLFlexST.stg"); //otwieramy plik z .stg
+            STGroup group = new STGroupFile("org/grammar/HTMLFlexST.stg"); //otwieramy plik z .stg
             TableHtmlFlexVisitor visitor = new TableHtmlFlexVisitor(group);
             String htmlFlexCode = visitor.visit(tree);
             setOutput(htmlFlexCode);
@@ -112,7 +113,7 @@ public class Main {
             System.out.println(htmlFlexCode);
 
         } else {
-            STGroup group = new STGroupFile("src/main/resources/org/grammar/HtmlST.stg"); //otwieramy plik z .stg
+            STGroup group = new STGroupFile("org/grammar/HtmlST.stg"); //otwieramy plik z .stg
             TableHtmlFlexVisitor visitor = new TableHtmlFlexVisitor(group);
             String htmlCode = visitor.visit(tree);
             setOutput(htmlCode);

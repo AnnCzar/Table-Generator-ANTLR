@@ -1,53 +1,53 @@
-<div class="table-container table-table1">
-  <div class="table-caption">Table: table1</div>
+<div class="table-container table-noBorderTable">
+  <div class="table-caption">Table: noBorderTable</div>
   <div class="table-header">
         <div class="flex-row">
-          <div class="flex-cell">Single Column</div>
+          <div class="flex-cell">ID</div><div class="flex-cell">Value</div>
         </div>
       </div>
   <div class="table-body">
     <div class="flex-row">
-      <div class="flex-cell">Row 1</div>
+      <div class="flex-cell">1</div>
+      <div class="flex-cell">A</div>
     </div>
     <div class="flex-row">
-      <div class="flex-cell">Row 2</div>
+      <div class="flex-cell">2</div>
+      <div class="flex-cell">B</div>
     </div>
   </div>
 </div>
 
 <style>
-  .table-table1 {
+  .table-noBorderTable {
     display: flex;
     flex-direction: column;
     width: 100%;
     margin-bottom: 20px;
-    border: 1px solid #ddd;
-    border-collapse: collapse;
+    border: none;
   }
 
-  .table-table1 .table-caption {
+  .table-noBorderTable .table-caption {
     font-weight: bold;
     text-align: center;
     margin-bottom: 10px;
   }
 
 
-  .table-table1 .table-header {
+  .table-noBorderTable .table-header {
     background-color: #ffffff;
-    border-bottom: 1px solid #ddd;
   }
 
-
-  .table-table1 .flex-row {
+  .table-noBorderTable .flex-row {
     display: flex;
     flex-direction: row;
     justify-content: center;
     text-align: center;
   }
 
-  .table-table1 > .table-header > .flex-row > .flex-cell,
-  .table-table1 > .table-body > .flex-row > .flex-cell {
+  .table-noBorderTable > .table-header > .flex-row > .flex-cell,
+  .table-noBorderTable > .table-body > .flex-row > .flex-cell {
     flex: 1;
     padding: 8px;
+    border: none;
   }
 </style>

@@ -1,362 +1,55 @@
-<table class="table-complexNested">
-  <caption>Table: complexNested</caption>
+<table class="table-noBorderTable">
+  <caption>Table: noBorderTable</caption>
   <thead>
     <tr>
       <tr>
-        <td>Product</td><td>Details</td><td>Suppliers</td>
+        <td>ID</td><td>Value</td>
       </tr>
     </tr>
   </thead>
   <tbody>
     <tr>
-      <td>Laptop</td>
-      <td><table class="nested-table nested-table-laptopDetails">
-        <thead>
-          <tr>
-            <tr>
-              <td>Spec</td><td>Value</td>
-            </tr>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td>CPU</td>
-            <td>i7-11800H</td>
-          </tr>
-          <tr>
-            <td>RAM</td>
-            <td>16GB</td>
-          </tr>
-          <tr>
-            <td>Storage</td>
-            <td><table class="nested-table nested-table-storageDetails">
-              <thead>
-                <tr>
-                  <tr>
-                    <td>Type</td><td>Size</td>
-                  </tr>
-                </tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <td>SSD</td>
-                  <td>512GB</td>
-                </tr>
-                <tr>
-                  <td>HDD</td>
-                  <td>1TB</td>
-                </tr>
-              </tbody>
-            </table>
-
-            <style>
-             table.nested-table.nested-table-storageDetails {
-                width: 100%;
-                border: 1px solid #ddd; border-collapse: collapse !important;
-              }
-              table.nested-table.nested-table-storageDetails th,
-              table.nested-table.nested-table-storageDetails td {
-                padding: 4px;
-                text-align: center; !important;
-              }
-             table.nested-table.nested-table-storageDetails > thead > tr > th,
-              table.nested-table.nested-table-storageDetails > tbody > tr > td {
-                border: none !important;
-              }
-
-              table.nested-table.nested-table-storageDetails thead {
-                background-color: #ffffff;
-              }
-            </style></td>
-          </tr>
-        </tbody>
-      </table>
-
-      <style>
-       table.nested-table.nested-table-laptopDetails {
-          width: 100%;
-          border: 1px solid #ddd; border-collapse: collapse !important;
-        }
-        table.nested-table.nested-table-laptopDetails th,
-        table.nested-table.nested-table-laptopDetails td {
-          padding: 4px;
-          text-align: center; !important;
-        }
-       table.nested-table.nested-table-laptopDetails > thead > tr > th,
-        table.nested-table.nested-table-laptopDetails > tbody > tr > td {
-          border: none !important;
-        }
-
-        table.nested-table.nested-table-laptopDetails thead {
-          background-color: #ffffff;
-        }
-      </style></td>
-      <td><table class="nested-table nested-table-laptopSuppliers">
-        <thead>
-          <tr>
-            <tr>
-              <td>Vendor</td>
-            </tr>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td>TechCorp</td>
-          </tr>
-          <tr>
-            <td>ElectroWorld</td>
-          </tr>
-        </tbody>
-      </table>
-
-      <style>
-       table.nested-table.nested-table-laptopSuppliers {
-          width: 100%;
-          border: 1px solid #ddd; border-collapse: collapse !important;
-        }
-        table.nested-table.nested-table-laptopSuppliers th,
-        table.nested-table.nested-table-laptopSuppliers td {
-          padding: 4px;
-          text-align: center; !important;
-        }
-       table.nested-table.nested-table-laptopSuppliers > thead > tr > th,
-        table.nested-table.nested-table-laptopSuppliers > tbody > tr > td {
-          border: none !important;
-        }
-
-        table.nested-table.nested-table-laptopSuppliers thead {
-          background-color: #ffffff;
-        }
-      </style></td>
+      <td>1</td>
+      <td>A</td>
     </tr>
     <tr>
-      <td>Smartphone</td>
-      <td><table class="nested-table nested-table-smartphoneDetails">
-        <thead>
-          <tr>
-            <tr>
-              <td>Feature</td><td>Value</td>
-            </tr>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td>Screen</td>
-            <td>6.5 AMOLED</td>
-          </tr>
-          <tr>
-            <td>Camera</td>
-            <td><table class="nested-table nested-table-cameraDetails">
-              <thead>
-                <tr>
-                  <tr>
-                    <td>Lens</td><td>MP</td>
-                  </tr>
-                </tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <td>Main</td>
-                  <td>48</td>
-                </tr>
-                <tr>
-                  <td>Ultrawide</td>
-                  <td>12</td>
-                </tr>
-                <tr>
-                  <td>Macro</td>
-                  <td>5</td>
-                </tr>
-              </tbody>
-            </table>
-
-            <style>
-             table.nested-table.nested-table-cameraDetails {
-                width: 100%;
-                border: 1px solid #ddd; border-collapse: collapse !important;
-              }
-              table.nested-table.nested-table-cameraDetails th,
-              table.nested-table.nested-table-cameraDetails td {
-                padding: 4px;
-                text-align: center; !important;
-              }
-             table.nested-table.nested-table-cameraDetails > thead > tr > th,
-              table.nested-table.nested-table-cameraDetails > tbody > tr > td {
-                border: none !important;
-              }
-
-              table.nested-table.nested-table-cameraDetails thead {
-                background-color: #ffffff;
-              }
-            </style></td>
-          </tr>
-        </tbody>
-      </table>
-
-      <style>
-       table.nested-table.nested-table-smartphoneDetails {
-          width: 100%;
-          border: 1px solid #ddd; border-collapse: collapse !important;
-        }
-        table.nested-table.nested-table-smartphoneDetails th,
-        table.nested-table.nested-table-smartphoneDetails td {
-          padding: 4px;
-          text-align: center; !important;
-        }
-       table.nested-table.nested-table-smartphoneDetails > thead > tr > th,
-        table.nested-table.nested-table-smartphoneDetails > tbody > tr > td {
-          border: none !important;
-        }
-
-        table.nested-table.nested-table-smartphoneDetails thead {
-          background-color: #ffffff;
-        }
-      </style></td>
-      <td><table class="nested-table nested-table-smartphoneSuppliers">
-        <thead>
-          <tr>
-            <tr>
-              <td>Region</td><td>Sellers</td>
-            </tr>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td>Europe</td>
-            <td><table class="nested-table nested-table-europeSellers">
-              <thead>
-                <tr>
-                  <tr>
-                    <td>Company</td>
-                  </tr>
-                </tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <td>MobileEU</td>
-                </tr>
-                <tr>
-                  <td>PhoneShop</td>
-                </tr>
-              </tbody>
-            </table>
-
-            <style>
-             table.nested-table.nested-table-europeSellers {
-                width: 100%;
-                border: 1px solid #ddd; border-collapse: collapse !important;
-              }
-              table.nested-table.nested-table-europeSellers th,
-              table.nested-table.nested-table-europeSellers td {
-                padding: 4px;
-                text-align: center; !important;
-              }
-             table.nested-table.nested-table-europeSellers > thead > tr > th,
-              table.nested-table.nested-table-europeSellers > tbody > tr > td {
-                border: none !important;
-              }
-
-              table.nested-table.nested-table-europeSellers thead {
-                background-color: #ffffff;
-              }
-            </style></td>
-          </tr>
-          <tr>
-            <td>Asia</td>
-            <td><table class="nested-table nested-table-asiaSellers">
-              <thead>
-                <tr>
-                  <tr>
-                    <td>Company</td>
-                  </tr>
-                </tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <td>AsiaTech</td>
-                </tr>
-                <tr>
-                  <td>DigitalEast</td>
-                </tr>
-              </tbody>
-            </table>
-
-            <style>
-             table.nested-table.nested-table-asiaSellers {
-                width: 100%;
-                border: 1px solid #ddd; border-collapse: collapse !important;
-              }
-              table.nested-table.nested-table-asiaSellers th,
-              table.nested-table.nested-table-asiaSellers td {
-                padding: 4px;
-                text-align: center; !important;
-              }
-             table.nested-table.nested-table-asiaSellers > thead > tr > th,
-              table.nested-table.nested-table-asiaSellers > tbody > tr > td {
-                border: none !important;
-              }
-
-              table.nested-table.nested-table-asiaSellers thead {
-                background-color: #ffffff;
-              }
-            </style></td>
-          </tr>
-        </tbody>
-      </table>
-
-      <style>
-       table.nested-table.nested-table-smartphoneSuppliers {
-          width: 100%;
-          border: 1px solid #ddd; border-collapse: collapse !important;
-        }
-        table.nested-table.nested-table-smartphoneSuppliers th,
-        table.nested-table.nested-table-smartphoneSuppliers td {
-          padding: 4px;
-          text-align: center; !important;
-        }
-       table.nested-table.nested-table-smartphoneSuppliers > thead > tr > th,
-        table.nested-table.nested-table-smartphoneSuppliers > tbody > tr > td {
-          border: none !important;
-        }
-
-        table.nested-table.nested-table-smartphoneSuppliers thead {
-          background-color: #ffffff;
-        }
-      </style></td>
+      <td>2</td>
+      <td>B</td>
     </tr>
   </tbody>
 </table>
 
 <style>
-  .table-complexNested {
+  .table-noBorderTable {
     width: 100%;
     border-collapse: collapse;
     margin-bottom: 20px;
-    border: 1px solid #ddd;
-    border-collapse: collapse;
+    border: none;
   }
 
-  .table-complexNested caption {
+  .table-noBorderTable caption {
     font-weight: bold;
     text-align: center;
     margin-bottom: 10px;
   }
-  .table-complexNested th,
-  .table-complexNested td {
+  .table-noBorderTable th,
+  .table-noBorderTable td {
     padding: 8px;
     text-align: center;
   }
 
-  .table-complexNested th,
-  .table-complexNested td {
+  .table-noBorderTable th,
+  .table-noBorderTable td {
+    border: none;
     padding: 8px;
     text-align: center;
   }
 
-  .table-complexNested > thead > tr > th,
-  .table-complexNested > tbody > tr > td {
+  .table-noBorderTable > thead > tr > th,
+  .table-noBorderTable > tbody > tr > td {
+    border: none;
   }
-  .table-complexNested thead {
+  .table-noBorderTable thead {
     background-color: #ffffff;
   }
 

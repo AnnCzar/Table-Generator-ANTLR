@@ -813,4 +813,13 @@ DigitalEast \\
 \hline
 \end{tabular}
 \label{tab:complexNested}
+\end{table}\begin{table}[ht]
+\centering
+\caption{}
+\begin{tabular} {cc}
+ID & Value \\
+1 & A \\
+2 & B
+\end{tabular}
+\label{tab:noBorderTable}
 \end{table}
